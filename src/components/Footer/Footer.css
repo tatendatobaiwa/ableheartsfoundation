@@ -1,0 +1,133 @@
+footer {
+    text-align: left;
+    background: #043F70; 
+    color: #FFFFFF;
+    padding: 2rem 1.5rem;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    position: relative; 
+    bottom: 0;
+  }
+  
+  .footer-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .footer-column {
+    flex: 1 1 200px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-logo {
+    max-width: 300px; 
+    height: auto;
+    margin-bottom: 1rem; 
+  }
+  
+  .logo-column {
+    justify-content: center; 
+    align-items: center;
+  }
+  
+  h4.footer-heading {
+    color: #FFFFFF; /* Gold color for headings */
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  /* Contact Info */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-item .icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  /* Links and Offices Info */
+  .offices-info {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .offices-info li {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .offices-info li:hover {
+    color: #f4bc2a; /* Hover color */
+  }
+  
+  /* Social Icons */
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #f4bc2a;
+    transform: scale(1.1);
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    margin-top: 1.5rem;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+  }
+  
+  .footer-bottom p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom a {
+    color: #f4bc2a;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .footer-bottom a:hover {
+    text-decoration: none;
+    color: #b38513;
+    opacity: 0.8;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-wrapper {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .footer-column {
+      text-align: left;
+    }
+  }
+  
