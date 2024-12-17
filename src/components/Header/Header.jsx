@@ -6,7 +6,7 @@ import './Header.css';
 const Header = () => {
   const [isMenuActive, setMenuActive] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation(); // Get current URL
+  const location = useLocation(); 
 
   const handleLogoClick = () => {
     navigate('');
@@ -16,7 +16,7 @@ const Header = () => {
     setMenuActive(!isMenuActive);
   };
 
-  const isActive = (path) => location.pathname === path; // Check active page
+  const isActive = (path) => location.pathname === path; 
 
   return (
     <header>

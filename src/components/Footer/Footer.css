@@ -1,133 +1,191 @@
 footer {
-    text-align: left;
-    background: #043F70; 
-    color: #FFFFFF;
-    padding: 2rem 1.5rem;
-    font-family: "Poppins", sans-serif;
-    width: 100%;
-    position: relative; 
-    bottom: 0;
-  }
-  
+  background: #043F70;
+  color: white;
+  position: fixed;
+  margin-top: auto;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  font-family: Poppins, sans-serif;
+
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+h4.footer-heading {
+  color: #F4BC2A;
+  font-size: 28px;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact-info, .offices-info, .footer-bottom {
+  font-size: 18px;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ablehearts-logo ul{
+  padding-left: 0;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+.contact-item .icon {
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.contact-item span {
+  white-space: nowrap;
+}
+
+.contact-item.no-icon {
+  margin-left: 2.4rem;
+}
+
+.offices-info p {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  line-height: 2rem !important;
+}
+
+.social-icons img {
+  vertical-align: middle;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: white;
+  font-size: small;
+  margin: 0;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: #F4BC2A; 
+}
+
+.footer-bottom a:hover {
+  color: #cc9917;
+  opacity: 0.8;
+}
+
+.footer-quote {
+  width: 100%;
+  background-color: #00345E; 
+  color: #ffffff;
+  text-align: left;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-family: Poppins, "sans-serif";  
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1023px) {
   .footer-wrapper {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
-  
   .footer-column {
-    flex: 1 1 200px;
-    padding: 0 15px;
-    box-sizing: border-box;
-    margin-bottom: 1.5rem;
+    flex-basis: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 769px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .footer-logo {
-    max-width: 300px; 
-    height: auto;
-    margin-bottom: 1rem; 
-  }
-  
-  .logo-column {
+  .ablehearts-logo {
+    display: flex; 
     justify-content: center; 
-    align-items: center;
+    padding: 0;
+    width: 100%; 
   }
-  
-  h4.footer-heading {
-    color: #FFFFFF; /* Gold color for headings */
-    font-size: 1.5rem;
-    font-weight: 700;
+
+  .ablehearts-logo img {
+    height: 165px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-info {
+    width: 100%;
+  }
+
+  .ablehearts-logo img {
+    height: 145px;
+  }
+
+  .contact-item {
+    flex-direction: row;
+    align-items: center;
     margin-bottom: 1rem;
   }
-  
-  /* Contact Info */
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+
+  .contact-item span {
+    font-size: 14px;
   }
-  
-  .contact-item {
-    display: flex;
-    align-items: center;
-  }
-  
-  .contact-item .icon {
+
+  .contact-item.no-icon {
+    padding-left: 35px;
+    margin-left: 0.2rem;
     margin-right: 0.5rem;
-    font-size: 1.2rem;
+    margin-bottom: 0;
   }
-  
-  /* Links and Offices Info */
-  .offices-info {
-    list-style: none;
-    padding: 0;
+}
+
+@media (max-width: 345px) {
+  .ablehearts-logo img {
+    height: 132px;
   }
-  
-  .offices-info li {
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+  .contact-item.no-icon {
+    margin-left: 2.4rem;
   }
-  
-  .offices-info li:hover {
-    color: #f4bc2a; /* Hover color */
-  }
-  
-  /* Social Icons */
-  .social-icons {
-    display: flex;
-    gap: 1rem;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .social-icons a {
-    color: white;
-    font-size: 1.5rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .social-icons a:hover {
-    color: #f4bc2a;
-    transform: scale(1.1);
-  }
-  
-  /* Footer Bottom */
-  .footer-bottom {
-    text-align: center;
-    margin-top: 1.5rem;
-    border-top: 1px solid #444;
-    padding-top: 1rem;
-  }
-  
-  .footer-bottom p {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-  }
-  
-  .footer-bottom a {
-    color: #f4bc2a;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-  }
-  
-  .footer-bottom a:hover {
-    text-decoration: none;
-    color: #b38513;
-    opacity: 0.8;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .footer-wrapper {
-      flex-direction: column;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .footer-column {
-      text-align: left;
-    }
-  }
-  
+}
