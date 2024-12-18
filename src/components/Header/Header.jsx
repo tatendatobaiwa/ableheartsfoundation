@@ -55,6 +55,11 @@ const Header = () => {
                 </a>
               </li>
               <li className={`nav-item ${isMenuActive ? 'visible' : ''}`}>
+                <a href="/gallery" className={isActive('/gallery') ? 'active' : ''}>
+                  <span>Gallery</span>
+                </a>
+              </li>
+              <li className={`nav-item ${isMenuActive ? 'visible' : ''}`}>
                 <a href="/shop" className={isActive('/shop') ? 'active' : ''}>
                   <span>Shop</span>
                 </a>
