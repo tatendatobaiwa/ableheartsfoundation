@@ -1,17 +1,36 @@
-import { useState } from 'react'
-import Header from './components/Header/Header.jsx'
+import { useState } from 'react';
+import { Routes, Route } from "react-router-dom"; 
+import Header from './components/Header/Header.jsx';
 import Footer from "./components/Footer/Footer.jsx";
-import './App.css'
+import ScrollToTop from "./components/ScrollToTop.jsx";
+import ProgramsAndInitiatives from "./pages/ProgramsAndInitiatives/ProgramsAndInitiatives.jsx";
+import GetInvolved from "./pages/GetInvolved/GetInvolved.jsx";
+import Shop from "./pages/Shop/Shop.jsx";
+import AboutUs from "./pages/AboutUs/AboutUs.jsx";
+import TermsOfUse from "./pages/TermsOfUse/TermsOfUse.jsx";
+import Home from "./pages/Home/Home.jsx";
+import Gallery from "./pages/Gallery/Gallery.jsx"; 
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-    <Header></Header>
-      <Footer></Footer>
+      <Header />
+      {/* Main Routes */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/programs-and-initiatives" element={<ProgramsAndInitiatives />} />
+        <Route path="/get-involved" element={<GetInvolved />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
+        <Route path="/gallery" element={<Gallery />} />
+      </Routes>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

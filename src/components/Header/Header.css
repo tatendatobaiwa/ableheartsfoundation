@@ -31,6 +31,7 @@ header {
     display: block;
     max-height: 65px;
     width: auto;
+    padding: 1.5em 0em;
   }
   
   .nav-links {
@@ -55,12 +56,8 @@ header {
     width: 100%;
     text-align: center;
     margin: 0.5rem 0;
-  }.nav-links li {
-    width: 100%;
-    text-align: center;
-    margin: 0.5rem 0;
     position: relative; 
-}
+  }
 
 .nav-links li:not(:last-child)::after {
     content: '';
@@ -129,7 +126,7 @@ header {
   @media (max-width: 968px) {
     .logo {
       display: block;
-      max-height: 55px;
+      max-height: 70px;
       width: auto;
     }
     .menu-toggle {
@@ -172,3 +169,4 @@ header {
       margin-bottom: 1rem;
     }
   }
+

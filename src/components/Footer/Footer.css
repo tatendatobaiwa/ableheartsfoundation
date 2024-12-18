@@ -37,6 +37,18 @@ h4.footer-heading {
   font-family: Poppins, sans-serif;
   font-weight: 400;
 }
+.offices-item {
+  margin-bottom: 0.5rem;
+}
+
+.offices-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.offices-item a:hover {
+  color: #F4BC2A;
+}
 
 .contact-info {
   display: flex;
@@ -89,6 +101,7 @@ h4.footer-heading {
 .social-icons img:hover {
   opacity: 0.8;
   transform: scale(1.1);
+  filter: hue-rotate(35deg) saturate(200%) brightness(110%);
 }
 
 .footer-bottom {
@@ -99,7 +112,7 @@ h4.footer-heading {
 
 .footer-bottom p {
   color: white;
-  font-size: small;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -114,14 +127,14 @@ h4.footer-heading {
 }
 
 .footer-quote {
-  width: 100%;
+  max-width: 100%;
   background-color: #00345E; 
   color: #ffffff;
   text-align: left;
   padding: 1rem 2rem;
   font-weight: 600;
   font-family: Poppins, "sans-serif";  
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 @media (max-width: 1023px) {
@@ -152,6 +165,14 @@ h4.footer-heading {
 }
 
 @media (max-width: 576px) {
+  .offices-item a {
+    font-size: 1.3rem;
+  }
+  .footer-quote {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
   .contact-info {
     width: 100%;
   }
@@ -167,7 +188,7 @@ h4.footer-heading {
   }
 
   .contact-item span {
-    font-size: 14px;
+    font-size: 20px;
   }
 
   .contact-item.no-icon {
