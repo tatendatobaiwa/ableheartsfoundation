@@ -8,6 +8,9 @@ import membersneeded from '/src/assets/membersneeded.png';
 import blob2 from '/src/assets/blob2.png';
 import blob3 from '/src/assets/blob3.png';
 import blob4 from '/src/assets/blob4.png';
+import newsletter from '/src/assets/newsletterimage.png';
+import scribble from '/src/assets/scribblebackground.png';
+
 import './Home.css';
 
 const Home = () => {
@@ -67,11 +70,32 @@ const Home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const elements = document.querySelectorAll('.pre-animate');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target); // Stop observing once animated
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => {
+      observer.disconnect(); // Clean up the observer
+    };
+  }, []);
+
   const handleNextSlide = () => {
     if (isTransitioning) return;
 
     setIsTransitioning(true);
-    
+
     setTimeout(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
       setNextSlide((prev) => (prev + 1) % slides.length);
@@ -83,29 +107,29 @@ const Home = () => {
     if (isTransitioning || index === currentSlide) return;
 
     setIsTransitioning(true);
-    
+
     setTimeout(() => {
       setCurrentSlide(index);
       setNextSlide((index + 1) % slides.length);
       setIsTransitioning(false);
-    }, 500); 
+    }, 500);
   };
 
   return (
     <div className="home-container">
-      <div className="carousel-container">
-        <div 
+      <div className="carousel-container pre-animate">
+        <div
           className={`carousel-slide current-slide ${isTransitioning ? 'transitioning' : ''}`}
           style={{
             backgroundImage: `url(${slides[currentSlide].image})`,
-          }}          
+          }}
         >
           <div className="slide-content">
             <div className="event-details">
               <div className="event-details-row">
-                <img 
-                  src={slides[currentSlide].logo} 
-                  alt="Able Hearts Logo" 
+                <img
+                  src={slides[currentSlide].logo}
+                  alt="Able Hearts Logo"
                   className="event-logo"
                 />
                 <div className="event-text">
@@ -126,7 +150,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-            <div className="mission-container">
+
+      <div className="mission-container pre-animate">
         <div
           className="blob blob2"
           style={{
@@ -155,13 +180,41 @@ const Home = () => {
         <p>
           At Able Hearts, our mission is to break barriers, challenge stigma, and
           empower individuals with disabilities to embrace their full potential.
-          Guided by our belief that <span className="highlight">"We are all equal in the fact that we are all
-          different,"</span> we are committed to fostering inclusivity, celebrating
-          diversity, and driving meaningful change in communities. Together, we
-          strive to create a future where compassion and equality thrive.
+          Guided by our belief that{' '}
+          <span className="highlight">
+            "We are all equal in the fact that we are all different,"
+          </span>{' '}
+          we are committed to fostering inclusivity, celebrating diversity, and
+          driving meaningful change in communities. Together, we strive to create
+          a future where compassion and equality thrive.
         </p>
       </div>
-
+      {/* Newsletter Section */}
+      <div className="newsletter-container pre-animate">
+        <div className="contour-overlay">
+          <img src={scribble} alt="Scribblebackground" style={{ height: '53rem' }} />
+        </div>
+        <div className="newsletter-text">
+          <h3>Stay Updated!</h3>
+          <p>
+            Sign up for our newsletter to receive the latest news and updates directly to your inbox.
+          </p>
+          <form className="newsletter-form">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="newsletter-input"
+              required
+            />
+            <button type="submit" className="newsletter-button">
+              Subscribe
+            </button>
+          </form>
+        </div>
+        <div className="newsletter-image">
+          <img src={newsletter} alt="Newsletter" />
+        </div>
+      </div>
     </div>
   );
 };
