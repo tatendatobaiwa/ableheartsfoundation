@@ -2,11 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import landingPageImage from '/src/assets/landingpageimage.jpg';
 import whiteLogo from '/src/assets/whiteablehearts.png';
+import ahmerch from '/src/assets/ahmerch.jpg';
+import kedia from '/src/assets/kediaimage.png';
+import membersneeded from '/src/assets/membersneeded.png';
+
 import './Home.css';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
   const [animate, setAnimate] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const navigate = useNavigate();
 
   const slides = [
@@ -17,19 +23,19 @@ const Home = () => {
       date: 'August 20, 2023',
     },
     {
-      image: landingPageImage,
+      image: ahmerch,
+      logo: whiteLogo,
+      title: 'AbleHearts Merch',
+      date: 'Pre-Order Today!',
+    },
+    {
+      image: kedia,
       logo: whiteLogo,
       title: 'Dynamic Talent Show',
       date: 'August 20, 2023',
     },
     {
-      image: landingPageImage,
-      logo: whiteLogo,
-      title: 'Dynamic Talent Show',
-      date: 'August 20, 2023',
-    },
-    {
-      image: landingPageImage,
+      image: membersneeded,
       logo: whiteLogo,
       title: 'Dynamic Talent Show',
       date: 'August 20, 2023',
@@ -50,7 +56,7 @@ const Home = () => {
     }, 100);
 
     const slideInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      handleNextSlide();
     }, 5000);
 
     return () => {
@@ -59,20 +65,47 @@ const Home = () => {
     };
   }, []);
 
+  const handleNextSlide = () => {
+    if (isTransitioning) return;
+
+    setIsTransitioning(true);
+    
+    setTimeout(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setNextSlide((prev) => (prev + 1) % slides.length);
+      setIsTransitioning(false);
+    }, 500); // Match this with CSS transition duration
+  };
+
+  const handleIndicatorClick = (index) => {
+    if (isTransitioning || index === currentSlide) return;
+
+    setIsTransitioning(true);
+    
+    setTimeout(() => {
+      setCurrentSlide(index);
+      setNextSlide((index + 1) % slides.length);
+      setIsTransitioning(false);
+    }, 500); // Match this with CSS transition duration
+  };
+
   return (
     <div className="home-container">
       <div className="carousel-container">
-        <div
-          className="carousel-slide"
+        <div 
+          className={`carousel-slide current-slide ${isTransitioning ? 'transitioning' : ''}`}
           style={{
             backgroundImage: `url(${slides[currentSlide].image})`,
           }}
         >
           <div className="slide-content">
             <div className="event-details">
-              {/* Align logo and text horizontally */}
               <div className="event-details-row">
-                <img src={slides[currentSlide].logo} alt="Able Hearts Logo" className="event-logo" />
+                <img 
+                  src={slides[currentSlide].logo} 
+                  alt="Able Hearts Logo" 
+                  className="event-logo"
+                />
                 <div className="event-text">
                   <h2>{slides[currentSlide].title}</h2>
                   <p>{slides[currentSlide].date}</p>
@@ -84,7 +117,7 @@ const Home = () => {
                 <span
                   key={index}
                   className={`indicator ${currentSlide === index ? 'active' : ''}`}
-                  onClick={() => setCurrentSlide(index)}
+                  onClick={() => handleIndicatorClick(index)}
                 />
               ))}
             </div>
