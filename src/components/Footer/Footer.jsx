@@ -57,7 +57,7 @@ const Footer = () => {
                 </div>
                 <div className="contact-item">
                   <img src={phoneIcon} alt="Phone Icon" className="icon" height="30" width="30" />
-                  <span>+267 76 198 717</span>
+                  <span>+267 71 422 300</span>
                 </div>
                 <div className="contact-item">
                   <img src={locationlogo} alt="Phone Icon" className="icon" height="30" width="30" />
