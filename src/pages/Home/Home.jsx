@@ -5,7 +5,9 @@ import whiteLogo from '/src/assets/whiteablehearts.png';
 import ahmerch from '/src/assets/ahmerch.jpg';
 import kedia from '/src/assets/kediaimage.png';
 import membersneeded from '/src/assets/membersneeded.png';
-
+import blob2 from '/src/assets/blob2.png';
+import blob3 from '/src/assets/blob3.png';
+import blob4 from '/src/assets/blob4.png';
 import './Home.css';
 
 const Home = () => {
@@ -74,7 +76,7 @@ const Home = () => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
       setNextSlide((prev) => (prev + 1) % slides.length);
       setIsTransitioning(false);
-    }, 500); // Match this with CSS transition duration
+    }, 500);
   };
 
   const handleIndicatorClick = (index) => {
@@ -86,7 +88,7 @@ const Home = () => {
       setCurrentSlide(index);
       setNextSlide((index + 1) % slides.length);
       setIsTransitioning(false);
-    }, 500); // Match this with CSS transition duration
+    }, 500); 
   };
 
   return (
@@ -96,7 +98,7 @@ const Home = () => {
           className={`carousel-slide current-slide ${isTransitioning ? 'transitioning' : ''}`}
           style={{
             backgroundImage: `url(${slides[currentSlide].image})`,
-          }}
+          }}          
         >
           <div className="slide-content">
             <div className="event-details">
@@ -124,7 +126,31 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="mission-container">
+            <div className="mission-container">
+        <div
+          className="blob blob2"
+          style={{
+            backgroundImage: `url(${blob2})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        ></div>
+        <div
+          className="blob blob3"
+          style={{
+            backgroundImage: `url(${blob3})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        ></div>
+        <div
+          className="blob blob4"
+          style={{
+            backgroundImage: `url(${blob4})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        ></div>
         <h2>Our Mission</h2>
         <p>
           At Able Hearts, our mission is to break barriers, challenge stigma, and
@@ -135,6 +161,7 @@ const Home = () => {
           strive to create a future where compassion and equality thrive.
         </p>
       </div>
+
     </div>
   );
 };
