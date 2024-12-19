@@ -298,6 +298,31 @@
     .slide-content {
       flex-direction: row;
     }
+
+    .blob {
+      animation: none; 
+    }
+  
+    .blob2, .blob3, .blob4 {
+      width: 450px;
+      height: 500px;
+    }
+  
+    .blob2 {
+      bottom: 20rem;
+      right: -15rem;
+    }
+  
+    .blob3 {
+      bottom: -15rem;
+      left: 10rem;
+    }
+  
+    .blob4 {
+      bottom: 5rem;
+      left: -15rem;
+    }
+  
   }
   
   @media (min-width: 577px) and (max-width: 768px) {
