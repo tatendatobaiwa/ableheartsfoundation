@@ -10,6 +10,14 @@ import blob3 from '/src/assets/blob3.png';
 import blob4 from '/src/assets/blob4.png';
 import newsletter from '/src/assets/newsletterimage.png';
 import scribble from '/src/assets/scribblebackground.png';
+import valentines from '/src/assets/valentinessports.png';
+import tropicana from '/src/assets/tropicana.png';
+import trans from '/src/assets/trans.png';
+import sennfoods from '/src/assets/sennfoods.webp';
+import nortex from '/src/assets/nortex.png';
+import minjex from '/src/assets/minjex.png';
+import india from '/src/assets/india.png';
+import francistownelectronics from '/src/assets/francistownelectronics.png';
 
 import './Home.css';
 
@@ -77,7 +85,7 @@ const Home = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target); // Stop observing once animated
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -87,7 +95,7 @@ const Home = () => {
     elements.forEach((element) => observer.observe(element));
 
     return () => {
-      observer.disconnect(); // Clean up the observer
+      observer.disconnect(); 
     };
   }, []);
 
@@ -215,27 +223,37 @@ const Home = () => {
           <img src={newsletter} alt="Newsletter" />
         </div>
       </div>
-      <div className="collaborators-container">
+      <div className="collaborators-container pre-animate">
   <h3>Our Valued Collaborators</h3>
   <div className="logo-bar">
     <div className="logo-slider">
-      <img src="https://via.placeholder.com/150" alt="Collaborator 1" />
-      <img src="https://via.placeholder.com/150" alt="Collaborator 2" />
-      <img src="https://via.placeholder.com/150" alt="Collaborator 3" />
-      <img src="https://via.placeholder.com/150" alt="Collaborator 4" />
-      <img src="https://via.placeholder.com/150" alt="Collaborator 5" />
-      <img src="https://via.placeholder.com/150" alt="Collaborator 6" />
-      {/* Duplicated logos for infinite scroll */}
-      <img src="https://via.placeholder.com/150" alt="Collaborator 1" />
-      <img src="https://via.placeholder.com/150" alt="Collaborator 2" />
-      <img src="https://via.placeholder.com/150" alt="Collaborator 3" />
-      <img src="https://via.placeholder.com/150" alt="Collaborator 4" />
-      <img src="https://via.placeholder.com/150" alt="Collaborator 5" />
-      <img src="https://via.placeholder.com/150" alt="Collaborator 6" />
+      <img src={india} alt="Collaborator 1" />
+      <img src={minjex}alt="Collaborator 2" />
+      <img src={nortex}alt="Collaborator 3" />
+      <img src={trans}alt="Collaborator 4" />
+      <img src={tropicana} alt="Collaborator 5" />
+      <img src={sennfoods} alt="Collaborator 6" />
+      <img src={francistownelectronics} alt="Collaborator 7" />
+      <img src={valentines} alt="Collaborator 8" />
+      <img src={india} alt="Collaborator 11" />
+      <img src={minjex}alt="Collaborator 22" />
+      <img src={nortex}alt="Collaborator 33" />
+      <img src={trans}alt="Collaborator 44" />
+      <img src={tropicana} alt="Collaborator 55" />
+      <img src={sennfoods} alt="Collaborator 66" />
+      <img src={francistownelectronics} alt="Collaborator 77" />
+      <img src={valentines} alt="Collaborator 88" />
+      <img src={india} alt="Collaborator 111" />
+      <img src={minjex}alt="Collaborator 222" />
+      <img src={nortex}alt="Collaborator 333" />
+      <img src={trans}alt="Collaborator 444" />
+      <img src={tropicana} alt="Collaborator 555" />
+      <img src={sennfoods} alt="Collaborator 666" />
+      <img src={francistownelectronics} alt="Collaborator 777" />
+      <img src={valentines} alt="Collaborator 888" />
     </div>
   </div>
 </div>
-
     </div>
   );
 };
