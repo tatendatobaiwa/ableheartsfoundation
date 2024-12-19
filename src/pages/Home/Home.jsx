@@ -215,6 +215,27 @@ const Home = () => {
           <img src={newsletter} alt="Newsletter" />
         </div>
       </div>
+      <div className="collaborators-container">
+  <h3>Our Valued Collaborators</h3>
+  <div className="logo-bar">
+    <div className="logo-slider">
+      <img src="https://via.placeholder.com/150" alt="Collaborator 1" />
+      <img src="https://via.placeholder.com/150" alt="Collaborator 2" />
+      <img src="https://via.placeholder.com/150" alt="Collaborator 3" />
+      <img src="https://via.placeholder.com/150" alt="Collaborator 4" />
+      <img src="https://via.placeholder.com/150" alt="Collaborator 5" />
+      <img src="https://via.placeholder.com/150" alt="Collaborator 6" />
+      {/* Duplicated logos for infinite scroll */}
+      <img src="https://via.placeholder.com/150" alt="Collaborator 1" />
+      <img src="https://via.placeholder.com/150" alt="Collaborator 2" />
+      <img src="https://via.placeholder.com/150" alt="Collaborator 3" />
+      <img src="https://via.placeholder.com/150" alt="Collaborator 4" />
+      <img src="https://via.placeholder.com/150" alt="Collaborator 5" />
+      <img src="https://via.placeholder.com/150" alt="Collaborator 6" />
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };
