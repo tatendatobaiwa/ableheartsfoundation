@@ -5,8 +5,10 @@ import './Header.css';
 
 const Header = () => {
   const [isMenuActive, setMenuActive] = useState(false);
+  const [isDropdownActive, setDropdownActive] = useState(false);
+
   const navigate = useNavigate();
-  const location = useLocation(); 
+  const location = useLocation();
 
   const handleLogoClick = () => {
     navigate('');
@@ -16,7 +18,11 @@ const Header = () => {
     setMenuActive(!isMenuActive);
   };
 
-  const isActive = (path) => location.pathname === path; 
+  const toggleDropdown = () => {
+    setDropdownActive(!isDropdownActive);
+  };
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header>
@@ -49,10 +55,25 @@ const Header = () => {
                   <span>Programs & Initiatives</span>
                 </a>
               </li>
-              <li className={`nav-item ${isMenuActive ? 'visible' : ''}`}>
+              <li
+                className={`nav-item dropdown ${isDropdownActive ? 'active' : ''}`}
+                onMouseEnter={toggleDropdown}
+                onMouseLeave={toggleDropdown}
+              >
                 <a href="/get-involved" className={isActive('/get-involved') ? 'active' : ''}>
                   <span>Get Involved</span>
                 </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a href="/get-involved">AbleHearts UB</a>
+                  </li>
+                  <li>
+                    <a href="/get-involved">AbleHearts BIUST</a>
+                  </li>
+                  <li>
+                    <a href="/get-involved">Partner with Us</a>
+                  </li>
+                </ul>
               </li>
               <li className={`nav-item ${isMenuActive ? 'visible' : ''}`}>
                 <a href="/gallery" className={isActive('/gallery') ? 'active' : ''}>
