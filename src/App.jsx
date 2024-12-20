@@ -17,6 +17,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop /> {/* Ensures scroll-to-top functionality */}
       <Header />
       {/* Main Routes */}
       <Routes>

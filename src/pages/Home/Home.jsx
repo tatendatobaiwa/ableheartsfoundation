@@ -6,6 +6,8 @@ import ahmerch from '/src/assets/ahmerch.jpg';
 import kedia from '/src/assets/kediaimage.png';
 import membersneeded from '/src/assets/membersneeded.png';
 import blob2 from '/src/assets/blob2.png';
+import bms from '/src/assets/bms.png';
+import bush from '/src/assets/busht.png';
 import blob3 from '/src/assets/blob3.png';
 import blob4 from '/src/assets/blob4.png';
 import newsletter from '/src/assets/newsletterimage.png';
@@ -18,6 +20,7 @@ import nortex from '/src/assets/nortex.png';
 import minjex from '/src/assets/minjex.png';
 import india from '/src/assets/india.png';
 import francistownelectronics from '/src/assets/francistownelectronics.png';
+import strub from '/src/assets/strub.png';
 
 import './Home.css';
 
@@ -235,6 +238,9 @@ const Home = () => {
       <img src={sennfoods} alt="Collaborator 6" />
       <img src={francistownelectronics} alt="Collaborator 7" />
       <img src={valentines} alt="Collaborator 8" />
+      <img src={bush} alt="Collaborator 9" />
+      <img src={strub} alt="Collaborator 10" />
+      <img src={bms} alt="Collaborator 12" />
       <img src={india} alt="Collaborator 11" />
       <img src={minjex}alt="Collaborator 22" />
       <img src={nortex}alt="Collaborator 33" />
@@ -243,6 +249,9 @@ const Home = () => {
       <img src={sennfoods} alt="Collaborator 66" />
       <img src={francistownelectronics} alt="Collaborator 77" />
       <img src={valentines} alt="Collaborator 88" />
+      <img src={bush} alt="Collaborator 99" />
+      <img src={strub} alt="Collaborator 110" />
+      <img src={bms} alt="Collaborator 112" />
       <img src={india} alt="Collaborator 111" />
       <img src={minjex}alt="Collaborator 222" />
       <img src={nortex}alt="Collaborator 333" />
@@ -251,6 +260,10 @@ const Home = () => {
       <img src={sennfoods} alt="Collaborator 666" />
       <img src={francistownelectronics} alt="Collaborator 777" />
       <img src={valentines} alt="Collaborator 888" />
+      <img src={bush} alt="Collaborator 999" />
+      <img src={strub} alt="Collaborator 1111" />
+      <img src={bms} alt="Collaborator 1112" />
+
     </div>
   </div>
 </div>
