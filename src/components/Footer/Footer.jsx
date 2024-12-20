@@ -61,7 +61,7 @@ const Footer = () => {
                 </div>
                 <div className="contact-item">
                   <img src={locationlogo} alt="Phone Icon" className="icon" height="30" width="30" />
-                  <span>Francistown, Botswana</span>
+                  <span>Botswana</span>
                 </div>
               </div>
             </div>

@@ -367,7 +367,7 @@
 
 .logo-slider {
   display: flex;
-  animation: slide 300s linear infinite;
+  animation: slide 600s linear infinite;
 }
 
 @keyframes slide {
