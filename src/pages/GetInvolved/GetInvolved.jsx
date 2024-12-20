@@ -26,47 +26,12 @@ const GetInvolved = () => {
 
   return (
     <div className="get-involved-container">
-      {/* Global Blobs */}
-      <div
-        className="blob blob2"
-        style={{
-          backgroundImage: `url(/src/assets/blob2.png)`,
-          top: '10rem',
-          right: '-10rem',
-        }}
-      ></div>
-      <div
-        className="blob blob3"
-        style={{
-          backgroundImage: `url(/src/assets/blob3.png)`,
-          top: '5rem',
-          left: '10rem',
-        }}
-      ></div>
-      <div
-        className="blob blob4"
-        style={{
-          backgroundImage: `url(/src/assets/blob4.png)`,
-          top: '47rem',
-          right: '0rem',
-        }}
-      ></div>
-      <div
-        className="blob blob5"
-        style={{
-          backgroundImage: `url(/src/assets/blob2.png)`,
-          top: '55rem',
-          left: '50rem',
-        }}
-      ></div>
-      <div
-        className="blob blob6"
-        style={{
-          backgroundImage: `url(/src/assets/blob3.png)`,
-          top: '80rem',
-          right: '30rem',
-        }}
-      ></div>
+  {/* Global Blobs */}
+  <div className="blob blob2"></div>
+  <div className="blob blob3"></div>
+  <div className="blob blob4"></div>
+  <div className="blob blob5"></div>
+  <div className="blob blob6"></div>
       {/* Main Get Involved Section */}
       <div className="content-container pre-animate">
         <div className="left-content">
@@ -93,7 +58,6 @@ const GetInvolved = () => {
           </div>
         </div>
       </div>
-
       {/* Additional Containers */}
       <div className="additional-section pre-animate">
         {/* AbleHearts UB */}
@@ -105,12 +69,12 @@ const GetInvolved = () => {
               in the lives of people with disabilities. Get involved to create a more inclusive world.
             </p>
             <button className="find-out-more-button" onClick={() => navigate('/ablehearts-ub')}>
-              Find Out More
+            Become a Member
             </button>
           </div>
           <div className="right-content">
             <img
-              src="https://via.placeholder.com/400x300" /* Replace with actual image */
+              src="/src/assets/ubvolunteers.jpeg" /* Replace with actual image */
               alt="AbleHearts UB"
               className="placeholder-image"
             />
@@ -125,38 +89,47 @@ const GetInvolved = () => {
               disabilities. Join us in transforming campus life through collaboration and compassion.
             </p>
             <button className="find-out-more-button" onClick={() => navigate('/ablehearts-biust')}>
-              Find Out More
+              Become a Member
             </button>
           </div>
           <div className="right-content">
             <img
-              src="https://via.placeholder.com/400x300" /* Replace with actual image */
+              src="/src/assets/biustvolunteers.JPG"
               alt="AbleHearts BIUST"
               className="placeholder-image"
             />
           </div>
         </div>
         {/* Partnerships */}
-        <div className="content-container1" style={{ backgroundColor: '#0066cc', marginBottom:'0' }}>
-        <div className="contour-overlay">
-          <img src={scribble} alt="Scribblebackground" style={{ height: '53rem' }} />
-        </div>
-          <div className="left-content">
-            <h2 style={{ color: 'white' }}>Partnerships</h2>
-            <p style={{ color: 'white' }}>
-              Partner with us to amplify our efforts. Together, we can create impactful initiatives that empower
-              individuals with disabilities and drive community change.
-            </p>
-          </div>
-          <div className="right-content" >
-            <img
-              src="/src/assets/partner.JPG"
-              alt="Partnerships"
-              className="placeholder-image"
-              style={{ borderRadius: '0' }}
-            />
-          </div>
-        </div>
+<div className="content-container1" style={{ backgroundColor: '#0066cc', marginBottom: '0' }}>
+  <div className="contour-overlay">
+    <img src={scribble} alt="Scribblebackground" style={{ height: '53rem' }} />
+  </div>
+  <div className="left-content">
+    <h2 style={{ color: 'white' }}>Partnerships</h2>
+    <p style={{ color: 'white' }}>
+      Partner with us to amplify our efforts. Together, we can create impactful initiatives that empower
+      individuals with disabilities and drive community change.
+    </p>
+    <button
+        className="email-button"
+        onClick={() =>
+          (window.location.href = 'mailto:ableheartsfoundation@gmail.com?subject=Partnership Inquiry')
+        }
+      >
+        Send Us an Email
+      </button>
+  </div>
+  <div className="right-content">
+    <img
+      src="/src/assets/partner.JPG"
+      alt="Partnerships"
+      className="placeholder-image"
+      style={{ borderRadius: '0' }}
+    />
+  </div>
+</div>
+
       </div>
     </div>
   );
