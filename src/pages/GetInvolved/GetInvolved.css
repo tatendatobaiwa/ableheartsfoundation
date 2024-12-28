@@ -1,5 +1,5 @@
 /* Blob Animations */
-.blob {
+.blob-1 {
     position: absolute;
     z-index: 0;
     background-size: cover;
@@ -11,9 +11,9 @@
   }
 
   .blob2 {
-    background-image: url('/src/assets/blob2.png');
+    background-image: url('/src/assets/blob4.png');
     top: 10rem;
-    right: -10rem;
+    right: 0rem;
   }
   
   .blob3 {
@@ -39,8 +39,7 @@
     top: 80rem;
     right: 30rem;
   }
-  
-  
+   
   @keyframes blobMove {
     0% {
       transform: translate(0, 0) rotate(0deg);
@@ -71,7 +70,6 @@
     z-index: 2;
   }
   
-
 @keyframes fadeIn {
     from {
       opacity: 0;
@@ -109,27 +107,6 @@
     background-position: center;
     pointer-events: none;
     animation: blobMove 10s infinite ease-in-out;
-  }
-  
-  .blob2 {
-    width: 480px;
-    height: 556px;
-    bottom: 0;
-    right: -15rem;
-  }
-  
-  .blob3 {
-    width: 516px;
-    height: 556px;
-    bottom: -12rem;
-    left: 25rem;
-  }
-  
-  .blob4 {
-    width: 516px;
-    height: 596px;
-    bottom: -5rem;
-    left: -12rem;
   }
   
   /* Content Container */
@@ -185,7 +162,7 @@
     padding: 1rem 2rem;
     font-family: Poppins, "sans-serif";
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: normal;
     color: #FFFFFF;
     background-color: #008CFF;
     border: none;
@@ -289,7 +266,7 @@
     padding: 0.75rem 2rem;
     font-family: Poppins, "sans-serif";
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: normal;
     color: #ffffff;
     background-color: #0066cc;
     border: none;
@@ -336,14 +313,28 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .blob5 {
+      top: 50rem;
+      left: 40rem;
+    }
+    .blob6 {
+      top: 80rem;
+      right: 15rem;
+    }
+  }
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .content-container,
-  .content-container1 {
+  .content-container {
     flex-direction: column;
     text-align: center;
     padding: 0 2rem;
+  }
+
+  .content-container1 {
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
   }
 
   .left-content,
@@ -409,4 +400,3 @@
     display: none;
   }
 }
-  

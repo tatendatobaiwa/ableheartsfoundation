@@ -1,3 +1,80 @@
+/* Carousel base styling */
+.carousel-container {
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-slide {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Active slide */
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+/* Previous slide state */
+.carousel-slide.previous {
+  opacity: 0;
+  transform: scale(0.95);
+  z-index: 1;
+}
+
+/* Hide all other slides */
+.carousel-slide:not(.active):not(.previous) {
+  opacity: 0;
+  z-index: 0;
+}
+
+/* Slide content */
+.slide-content {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  padding: 0 1rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.carousel-slide.active .slide-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Simple gradient overlay */
+.carousel-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
 /* Animation Keyframes */
 @keyframes fadeIn {
     from {
@@ -53,6 +130,7 @@
     max-width: 100%;
     padding-top: 80px;
     overflow-x: hidden;
+    font-family: Poppins, "sans-serif";
   }
   
   .body-container {
@@ -68,6 +146,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
   
   .thrive-container {
@@ -79,57 +158,6 @@
     text-align: center;
     margin: 0;
     box-sizing: border-box;
-  }
-  
-  /* Carousel Styles */
-  .carousel-container {
-    height: 80vh;
-    position: relative;
-    overflow: hidden;
-    max-width: 100%;
-  }
-  
-  .carousel-slide {
-    height: 100%;
-    max-width: 100%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    opacity: 1;
-    transition: opacity 0.5s, transform 0.5s;
-    z-index: 1;
-  }
-
-  .carousel-slide.transitioning {
-    opacity: 0;
-    transform: scale(1.05);
-  }
-  
-  .carousel-slide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.3) 50%,
-      rgba(0, 0, 0, 0.7) 100%
-    );
-  }
-  
-  .slide-content {
-    position: absolute;
-    bottom: 1rem;
-    left: 0;
-    right: 0;
-    padding: 0 1rem;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
   }
   
   /* Event Details */
@@ -233,14 +261,14 @@
     width: 516px;
     height: 556px;
     bottom: -12rem;
-    left: 25rem;
+    left: -5rem;
   }
 
   .blob4 {
     width: 516px;
     height: 596px;
-    bottom: -5rem;
-    left: -12rem;
+    top: -15rem;
+    left: 28rem;
   }
   
   .highlight {
@@ -367,7 +395,28 @@
 
 .logo-slider {
   display: flex;
-  animation: slide 600s linear infinite;
+  animation: slide 1600s linear infinite;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
 }
 
 @keyframes slide {
@@ -531,7 +580,7 @@
   
     .blob3 {
       bottom: -15rem;
-      left: 10rem;
+      left: 0rem;
     }
   
     .blob4 {

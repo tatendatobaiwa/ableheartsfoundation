@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import landingPageImage from '/src/assets/landingpageimage.jpg';
 import whiteLogo from '/src/assets/whiteablehearts.png';
-import ahmerch from '/src/assets/ahmerch.jpg';
-import kedia from '/src/assets/kediaimage.png';
-import membersneeded from '/src/assets/membersneeded.png';
+import lephoi from '/src/assets/carousel1lephoi.jpg';
+import kedia from '/src/assets/carousel2kedia.jpeg';
+import tsogang from '/src/assets/carousel3tsogang.jpg';
+import mochudi from '/src/assets/carousel4mochudi.jpg'; 
 import blob2 from '/src/assets/blob2.png';
 import bms from '/src/assets/bms.png';
 import bush from '/src/assets/busht.png';
@@ -24,13 +25,6 @@ import strub from '/src/assets/strub.png';
 
 import './Home.css';
 
-const Home = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [nextSlide, setNextSlide] = useState(1);
-  const [animate, setAnimate] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const navigate = useNavigate();
-
   const slides = [
     {
       image: landingPageImage,
@@ -39,129 +33,139 @@ const Home = () => {
       date: 'August 20, 2023',
     },
     {
-      image: ahmerch,
+      image: lephoi,
       logo: whiteLogo,
-      title: 'AbleHearts Merch',
-      date: 'Pre-Order Today!',
+      title: 'Lephoi Centre for the Visually Impaired',
+      date: '2020',
     },
     {
       image: kedia,
       logo: whiteLogo,
-      title: 'Dynamic Talent Show',
-      date: 'August 20, 2023',
+      title: 'Kedia Primary School',
+      date: '2024',
     },
     {
-      image: membersneeded,
+      image: tsogang,
       logo: whiteLogo,
-      title: 'Dynamic Talent Show',
-      date: 'August 20, 2023',
+      title: 'Tsogang Trust',
+      date: '2022',
     },
     {
-      image: landingPageImage,
+      image: mochudi,
       logo: whiteLogo,
-      title: 'Dynamic Talent Show',
-      date: 'August 20, 2023',
+      title: 'Mochudi Resource Center',
+      date: '2021',
     },
   ];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-
-    const timer = setTimeout(() => {
-      setAnimate(true);
-    }, 100);
-
-    const slideInterval = setInterval(() => {
-      handleNextSlide();
-    }, 5000);
-
-    return () => {
-      clearTimeout(timer);
-      clearInterval(slideInterval);
-    };
-  }, []);
-
-  useEffect(() => {
-    const elements = document.querySelectorAll('.pre-animate');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    elements.forEach((element) => observer.observe(element));
-
-    return () => {
-      observer.disconnect(); 
-    };
-  }, []);
-
-  const handleNextSlide = () => {
-    if (isTransitioning) return;
-
-    setIsTransitioning(true);
-
-    setTimeout(() => {
+  const Home = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+  
+      const slideInterval = setInterval(() => {
+        handleNextSlide();
+      }, 5000);
+  
+      return () => clearInterval(slideInterval);
+    }, []);
+  
+    useEffect(() => {
+      const elements = document.querySelectorAll('.pre-animate');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+  
+      elements.forEach((element) => observer.observe(element));
+  
+      return () => {
+        observer.disconnect();
+      };
+    }, []);
+  
+    const handleNextSlide = () => {
+      if (isTransitioning) return;
+  
+      setIsTransitioning(true);
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-      setNextSlide((prev) => (prev + 1) % slides.length);
-      setIsTransitioning(false);
-    }, 500);
-  };
-
-  const handleIndicatorClick = (index) => {
-    if (isTransitioning || index === currentSlide) return;
-
-    setIsTransitioning(true);
-
-    setTimeout(() => {
+  
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 800); // Match CSS transition duration
+    };
+  
+    const handlePrevSlide = () => {
+      if (isTransitioning) return;
+  
+      setIsTransitioning(true);
+      setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 800);
+    };
+  
+    const handleIndicatorClick = (index) => {
+      if (isTransitioning || index === currentSlide) return;
+  
+      setIsTransitioning(true);
       setCurrentSlide(index);
-      setNextSlide((index + 1) % slides.length);
-      setIsTransitioning(false);
-    }, 500);
-  };
-
-  return (
-    <div className="home-container">
+  
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 800);
+    };
+  
+    return (
+      <div className="home-container">
+      {/* Carousel Section */}
       <div className="carousel-container pre-animate">
-        <div
-          className={`carousel-slide current-slide ${isTransitioning ? 'transitioning' : ''}`}
-          style={{
-            backgroundImage: `url(${slides[currentSlide].image})`,
-          }}
-        >
-          <div className="slide-content">
-            <div className="event-details">
-              <div className="event-details-row">
-                <img
-                  src={slides[currentSlide].logo}
-                  alt="Able Hearts Logo"
-                  className="event-logo"
-                />
-                <div className="event-text">
-                  <h2>{slides[currentSlide].title}</h2>
-                  <p>{slides[currentSlide].date}</p>
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
+            style={{ backgroundImage: `url(${slide.image})` }}
+          >
+            <div className="slide-content">
+              <div className="event-details">
+                <div className="event-details-row">
+                  <img src={slide.logo} alt="Event Logo" className="event-logo" />
+                  <div className="event-text">
+                    <h2>{slide.title}</h2>
+                    <p>{slide.date}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="carousel-indicators">
-              {slides.map((_, index) => (
-                <span
-                  key={index}
-                  className={`indicator ${currentSlide === index ? 'active' : ''}`}
-                  onClick={() => handleIndicatorClick(index)}
-                />
-              ))}
+              <div className="carousel-indicators">
+                {slides.map((_, idx) => (
+                  <span
+                    key={idx}
+                    className={`indicator ${currentSlide === idx ? 'active' : ''}`}
+                    onClick={() => handleIndicatorClick(idx)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        ))}
+        <button className="prev-button" onClick={handlePrevSlide} aria-label="Previous Slide">
+          &#8249;
+        </button>
+        <button className="next-button" onClick={handleNextSlide} aria-label="Next Slide">
+          &#8250;
+        </button>
       </div>
-
       <div className="mission-container pre-animate">
         <div
           className="blob blob2"
@@ -203,7 +207,7 @@ const Home = () => {
       {/* Newsletter Section */}
       <div className="newsletter-container pre-animate">
         <div className="contour-overlay">
-          <img src={scribble} alt="Scribblebackground" style={{ height: '53rem' }} />
+          <img src={scribble} alt="Scribblebackground"/>
         </div>
         <div className="newsletter-text">
           <h3>Stay Updated!</h3>
@@ -263,7 +267,6 @@ const Home = () => {
       <img src={bush} alt="Collaborator 999" />
       <img src={strub} alt="Collaborator 1111" />
       <img src={bms} alt="Collaborator 1112" />
-
     </div>
   </div>
 </div>

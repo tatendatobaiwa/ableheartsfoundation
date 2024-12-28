@@ -23,7 +23,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="footer-column">
-              <h4 className="footer-heading">AbleHearts Foundation™</h4>
+              <h4 className="footer-heading">AbleHearts Foundation</h4>
               <div className="offices-info">
                 <div className="offices-item">
                   <Link to="/programs-and-initiatives">
@@ -116,7 +116,7 @@ const Footer = () => {
           {/* Footer Bottom */}
           <div className="footer-bottom">
             <p>
-              © 2017 AbleHearts Foundation™. All Rights Reserved | {" "}
+              © 2017 AbleHearts Foundation. All Rights Reserved | {" "}
               <Link to="/terms-of-use">Terms of Use</Link>
             </p>
           </div>

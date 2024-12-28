@@ -27,11 +27,11 @@ const GetInvolved = () => {
   return (
     <div className="get-involved-container">
   {/* Global Blobs */}
-  <div className="blob blob2"></div>
-  <div className="blob blob3"></div>
-  <div className="blob blob4"></div>
-  <div className="blob blob5"></div>
-  <div className="blob blob6"></div>
+  <div className="blob-1 blob2"></div>
+  <div className="blob-1 blob3"></div>
+  <div className="blob-1 blob4"></div>
+  <div className="blob-1 blob5"></div>
+  <div className="blob-1 blob6"></div>
       {/* Main Get Involved Section */}
       <div className="content-container pre-animate">
         <div className="left-content">
