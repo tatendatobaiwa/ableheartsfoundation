@@ -103,7 +103,7 @@ const GetInvolved = () => {
         {/* Partnerships */}
 <div className="content-container1" style={{ backgroundColor: '#0066cc', marginBottom: '0' }}>
   <div className="contour-overlay">
-    <img src={scribble} alt="Scribblebackground" style={{ height: '53rem' }} />
+    <img src={scribble} alt="Scribblebackground" style={{ height: '80rem' }} />
   </div>
   <div className="left-content">
     <h2 style={{ color: 'white' }}>Partnerships</h2>
