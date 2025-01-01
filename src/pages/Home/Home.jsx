@@ -263,15 +263,20 @@ const imageLoaders = {
         <h3>Our Valued Collaborators</h3>
         <div className="logo-bar">
           <div className="logo-slider">
-            {['india', 'minjex', 'nortex', 'trans', 'tropicana', 'sennfoods',
-              'francistownelectronics', 'valentines', 'bush', 'strub', 'bms'].map((logo, index) => (
-              <img
-                key={`${logo}-${index}`}
-                src={getImageUrl(logo)}
-                alt={`Collaborator ${index + 1}`}
-                loading="lazy"
-              />
-            ))}
+            {Array(5) // Repeat the entire set 5 times
+              .fill([
+                'india', 'minjex', 'nortex', 'trans', 'tropicana', 'sennfoods',
+                'francistownelectronics', 'valentines', 'bush', 'strub', 'bms',
+              ])
+              .flat()
+              .map((logo, index) => (
+                <img
+                  key={`${logo}-${index}`}
+                  src={getImageUrl(logo)}
+                  alt={`Collaborator ${index + 1}`}
+                  loading="lazy"
+                />
+              ))}
           </div>
         </div>
       </div>

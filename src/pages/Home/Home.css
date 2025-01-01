@@ -303,7 +303,7 @@ body {
 .logo-slider {
   display: flex;
   gap: 2rem;
-  animation: slide 800s linear infinite;
+  animation: slide 200s linear infinite;
 }
 
 .logo-slider img {
@@ -373,6 +373,7 @@ body {
   .newsletter-container { padding: 2rem 0; }
 
   .newsletter-text p { padding: 0;}
+
 }
 
 @media (min-width: 768px) and (max-width: 853px) {
@@ -462,4 +463,12 @@ body {
 @media (min-width: 577px) and (max-width: 768px) {  
   .event-details h2 { font-size: 1.7rem; }
   .event-details p { font-size: 1.1rem; }
+}
+
+@media (max-width: 1024px) {
+  .logo-slider {
+    display: flex;
+    gap: 2rem;
+    animation: slide 20s linear infinite;
+  }
 }
