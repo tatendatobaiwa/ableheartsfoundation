@@ -9,7 +9,9 @@ import Shop from "./pages/Shop/Shop.jsx";
 import AboutUs from "./pages/AboutUs/AboutUs.jsx";
 import TermsOfUse from "./pages/TermsOfUse/TermsOfUse.jsx";
 import Home from "./pages/Home/Home.jsx";
-import Gallery from "./pages/Gallery/Gallery.jsx"; 
+import Gallery from "./pages/Gallery/Gallery.jsx";
+import UBApp from "./pages/UBApp/UBApp.jsx";
+import BIUSTApp from "./pages/BIUSTApp/BIUSTApp.jsx";
 import './App.css';
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/ablehearts-ub" element={<UBApp />} />
+        <Route path="/ablehearts-biust" element={<BIUSTApp />} />
       </Routes>
       <Footer />
     </>
