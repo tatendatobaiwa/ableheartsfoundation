@@ -101,14 +101,14 @@ const ProgramsAndInitiatives = () => {
             src="/src/assets/kedia.jpeg"
             alt="Lavender High Tea"
           />
+          <p className="program-description">
+            From Shakawe JSS in 2021 to Kedia Primary School in 2024, our donations of uniforms, shoes, and toiletries aim to remove barriers to education and promote dignity for students in need.
+          </p>
           <img
             className="program-image"
             src="/src/assets/shakawedono.jpg"
             alt="Lavender High Tea"
           />
-          <p className="program-description">
-            From Shakawe JSS in 2021 to Kedia Primary School in 2024, our donations of uniforms, shoes, and toiletries aim to remove barriers to education and promote dignity for students in need.
-          </p>
         </div>
       </section>
     </div>
