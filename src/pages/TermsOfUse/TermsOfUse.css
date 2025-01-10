@@ -1,0 +1,134 @@
+/* Terms of Use Container */
+.terms-of-use-container {
+    padding: 2rem 4rem;
+    background-color: #F8FAFD; /* Light blueish background for contrast */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Poppins, "sans-serif";
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Title Styling */
+  .terms-of-use-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #043F70; /* Deep Blue */
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Section Titles */
+  .terms-of-use-section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #005bb5; /* Lighter Blue */
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+  }
+  
+  /* Paragraph Text */
+  .terms-of-use-text,
+  .terms-of-use-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #043F70;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Lists */
+  .terms-of-use-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .terms-of-use-item {
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    color: #043F70;
+    font-size: 1.1rem;
+  }
+  
+  .terms-of-use-item::before {
+    content: "•";
+    color: #005bb5; /* Blue bullet points */
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  
+  /* Links */
+  .terms-of-use-link {
+    color: #008CFF;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .terms-of-use-link:hover {
+    text-decoration: underline;
+    color: #005bb5;
+  }
+  
+  /* Email Contact Styling */
+  .terms-of-use-contact {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    color: #043F70;
+  }
+  
+  .terms-of-use-email {
+    color: #008CFF;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .terms-of-use-email:hover {
+    text-decoration: underline;
+    color: #005bb5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .terms-of-use-container {
+      padding: 1.5rem 2rem;
+    }
+  
+    .terms-of-use-title {
+      font-size: 2rem;
+    }
+  
+    .terms-of-use-section-title {
+      font-size: 1.5rem;
+    }
+  
+    .terms-of-use-text,
+    .terms-of-use-intro,
+    .terms-of-use-contact {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 540px) {
+    .terms-of-use-container {
+      padding: 1rem 1.5rem;
+    }
+  
+    .terms-of-use-title {
+      font-size: 1.8rem;
+      padding-top: 2rem;
+    }
+  
+    .terms-of-use-section-title {
+      font-size: 1.3rem;
+    }
+  
+    .terms-of-use-text,
+    .terms-of-use-intro,
+    .terms-of-use-contact {
+      font-size: 0.9rem;
+    }
+  }
+  

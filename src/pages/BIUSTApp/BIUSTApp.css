@@ -1,80 +1,86 @@
-/* Blobs */
+.biust-app-background {
+  position: relative;
+  width: 100%;
+  min-height: 110vh; /* Use min-height to allow content to expand */
+  overflow: visible; /* Ensure content isn't clipped */
+  background-color: #f3f3f3; /* Adjust background color as needed */
+}
+
 .blob-animated {
-    position: absolute;
-    background-size: cover;
-    pointer-events: none;
-    animation: blobMove 15s infinite ease-in-out;
-    border-radius: 50%;
-    opacity: 0.6;
-    z-index: 0;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  animation: blobMove 15s infinite ease-in-out;
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: 0; /* Ensure blobs stay behind the container */
+}
+
+@keyframes blobMove {
+  0% {
+    transform: translate(0, 0) scale(1);
   }
-  
-  /* Blob Animation */
-  @keyframes blobMove {
-    0% {
-      transform: translate(0, 0) scale(1);
-    }
-    50% {
-      transform: translate(10px, -10px) scale(1.05);
-    }
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
+  50% {
+    transform: translate(10px, -10px) scale(1.05);
   }
-  
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
 
 .biust-app-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-  }
-  
-  .biust-app-container h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .biust-app-container p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .application-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .application-form label {
-    font-size: 1rem;
-    color: #444;
-  }
-  
-  .application-form input,
-  .application-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
-  .application-form button.submit-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #28a745;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .application-form button.submit-button:hover {
-    background-color: #1e7e34;
-  }
+  position: relative;
+  z-index: 10; /* Ensure it's above the blobs */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(233, 233, 233);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Optional: prevent internal content overflow */
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+}
+
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.application-form input,
+.application-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  position: relative;
+  z-index: 2; 
+}

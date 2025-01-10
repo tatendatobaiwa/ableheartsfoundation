@@ -75,7 +75,6 @@ const GetInvolved = () => {
           </p>
           <div className="buttons-container">
             <button className="cta-button">Donate Now</button>
-            <button className="cta-button">Become a Volunteer</button>
           </div>
         </div>
         <div className="right-content">
