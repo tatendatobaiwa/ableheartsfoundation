@@ -99,7 +99,7 @@
     overflow: hidden;
   }
   
-  .blob {
+  .blobt {
     position: absolute;
     width: 600px;
     height: auto;
@@ -107,28 +107,28 @@
     animation: float 20s infinite ease-in-out;
   }
   
-  .blob-1 {
+  .blobt.blob-1 {
     top: 0%;
     left: -5%;
-    animation-delay: 0s;
+    animation: moveBlob1 20s infinite ease-in-out;
   }
   
-  .blob-2 {
+  .blobt.blob-2 {
     top: 20%;
     right: -10%;
-    animation-delay: 3s;
+    animation: moveBlob2 20s infinite ease-in-out;
   }
   
-  .blob-3 {
+  .blobt.blob-3 {
     bottom: -20%;
     left: 0%;
-    animation-delay: 6s;
+    animation: moveBlob3 20s infinite ease-in-out;
   }
   
-  .blob-4 {
+  .blobt.blob-4 {
     bottom: -30%;
     right: -10%;
-    animation-delay: 9s;
+    animation: moveBlob4 20s infinite ease-in-out;
   }
   
   

@@ -48,18 +48,18 @@ const GetInvolved = () => {
 
   return (
     <div className="page-wrapper">
-    {/* Background blobs */}
+    <div className="get-involved-container">
+      {/* Background blobs */}
     <div className="background-blobs">
-      {blobImages.map((blob, index) => (
+    {blobImages.map((blob, index) => (
         <img
           key={index}
           src={blob}
           alt={`Decorative blob ${index + 1}`}
-          className={`blob blob-${index + 1}`}
+          className={`blobg blob-${index + 1}`}
         />
       ))}
-    </div>
-    <div className="get-involved-container">
+      </div>
       {/* Main Get Involved Section */}
       <div className="content-container pre-animate">
         <div className="left-content">

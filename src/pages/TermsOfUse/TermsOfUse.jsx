@@ -53,7 +53,7 @@ const TermsOfUse = () => {
             key={index}
             src={blob}
             alt={`Decorative blob ${index + 1}`}
-            className={`blob blob-${index + 1}`}
+            className={`blobt blob-${index + 1}`}
           />
         ))}
       </div>

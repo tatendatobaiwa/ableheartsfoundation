@@ -1,14 +1,21 @@
+.page-wrapper {
+  position: relative; /* Establishes a stacking context */
+  z-index: 1; /* Base layer for content */
+  min-height: 100vh;
+}
+
 .background-blobs {
-  position: absolute;
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
-.blob {
+.blobg {
   position: absolute;
   width: 600px;
   height: auto;
@@ -16,28 +23,28 @@
   animation: float 20s infinite ease-in-out;
 }
 
-.blob-1 {
+.blobg.blob-1 {
   top: 0%;
-  left: -5%;
-  animation-delay: 0s;
-}
-
-.blob-2 {
-  top: 20%;
-  right: -10%;
-  animation-delay: 3s;
-}
-
-.blob-3 {
-  bottom: -20%;
   left: 0%;
-  animation-delay: 6s;
+  animation: moveBlob1 20s infinite ease-in-out;
 }
 
-.blob-4 {
-  bottom: -30%;
+.blobg.blob-2 {
+  top: 25%;
+  right: 5%;
+  animation: moveBlob2 20s infinite ease-in-out;
+}
+
+.blobg.blob-3 {
+  bottom: 20%;
+  left: 0%;
+  animation: moveBlob3 20s infinite ease-in-out;
+}
+
+.blobg.blob-4 {
+  bottom: 0%;
   right: -10%;
-  animation-delay: 9s;
+  animation: moveBlob4 20s infinite ease-in-out;
 }
 
 @keyframes float {
@@ -49,11 +56,24 @@
   }
 }
 
-@keyframes moveBlobs {
+@keyframes moveBlob1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(50px, -30px) scale(1.1); }
-  50% { transform: translate(-50px, 50px) scale(1.2); }
-  75% { transform: translate(30px, -50px) scale(1.1); }
+  50% { transform: translate(20px, 20px) scale(1.1); }
+}
+
+@keyframes moveBlob2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-20px, 30px) scale(1.15); }
+}
+
+@keyframes moveBlob3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.1); }
+}
+
+@keyframes moveBlob4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-25px, -25px) scale(1.12); }
 }
 
   /* Content Container */
@@ -65,7 +85,8 @@
     margin: 2rem 0;
     gap: 2rem;
     position: relative;
-    z-index: 2;
+    padding: 0 4rem;
+    z-index: 3
   }
   
 @keyframes fadeIn {
@@ -96,19 +117,9 @@
     background-color: white;
     overflow: hidden;
     padding-bottom: 0;
+    z-index: 2; 
   }
   
-  /* Content Container */
-  .content-container {
-    padding: 0 4rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 2; /* Ensures content is above the blobs */
-  }
-
   .content-container1 {
     padding: 0 4rem;
     display: flex;
@@ -116,7 +127,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 2; /* Ensures content is above the blobs */
+    z-index: 3
   }
   
   /* Left Content */
