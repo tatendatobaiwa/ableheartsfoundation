@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './TermsOfUse.css';
 
+const blobImages = [
+  '/src/assets/blob1.png',
+  '/src/assets/blob3.png',
+  '/src/assets/blob4.png',
+  '/src/assets/blob2.png',
+];
+
 const TermsOfUse = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="terms-of-use-container">
+      {/* Background blobs */}
+      <div className="background-blobs">
+        {blobImages.map((blob, index) => (
+          <img
+            key={index}
+            src={blob}
+            alt={`Decorative blob ${index + 1}`}
+            className={`blob blob-${index + 1}`}
+          />
+        ))}
+      </div>
       <h1 className="terms-of-use-title">Terms of Use</h1>
       <p className="terms-of-use-intro">
         Welcome to Able Hearts! By accessing or using this website, you agree to the following terms and conditions. Please review them carefully.
@@ -39,6 +71,11 @@ const TermsOfUse = () => {
         If you have questions about these Terms of Use, please contact us at: 
         <a href="mailto:ableheartsfoundation@gmail.com" className="terms-of-use-email"> ableheartsfoundation@gmail.com</a>
       </p>
+      {isScrolled && (
+        <button className="scroll-to-top-btn" onClick={scrollToTop}>
+          ↑
+        </button>
+      )}
     </div>
   );
 };

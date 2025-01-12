@@ -1,7 +1,6 @@
 /* Terms of Use Container */
 .terms-of-use-container {
     padding: 2rem 4rem;
-    background-color: #F8FAFD; /* Light blueish background for contrast */
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     font-family: Poppins, "sans-serif";
@@ -88,6 +87,66 @@
   .terms-of-use-email:hover {
     text-decoration: underline;
     color: #005bb5;
+  }
+
+  .background-blobs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .blob {
+    position: absolute;
+    width: 600px;
+    height: auto;
+    filter: blur(5px); 
+    animation: float 20s infinite ease-in-out;
+  }
+  
+  .blob-1 {
+    top: 0%;
+    left: -5%;
+    animation-delay: 0s;
+  }
+  
+  .blob-2 {
+    top: 20%;
+    right: -10%;
+    animation-delay: 3s;
+  }
+  
+  .blob-3 {
+    bottom: -20%;
+    left: 0%;
+    animation-delay: 6s;
+  }
+  
+  .blob-4 {
+    bottom: -30%;
+    right: -10%;
+    animation-delay: 9s;
+  }
+  
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  
+  @keyframes moveBlobs {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(50px, -30px) scale(1.1); }
+    50% { transform: translate(-50px, 50px) scale(1.2); }
+    75% { transform: translate(30px, -50px) scale(1.1); }
   }
   
   /* Responsive Design */
