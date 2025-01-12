@@ -23,8 +23,29 @@ const TermsOfUse = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    const elements = document.querySelectorAll('.pre-animate');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <div className="terms-of-use-container">
+    <div className="terms-of-use-container pre-animate">
       {/* Background blobs */}
       <div className="background-blobs">
         {blobImages.map((blob, index) => (

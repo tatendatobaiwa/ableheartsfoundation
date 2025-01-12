@@ -23,6 +23,25 @@ const ProgramsAndInitiatives = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    const elements = document.querySelectorAll('.pre-animate');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+  
+    elements.forEach((element) => observer.observe(element));
+  
+    return () => observer.disconnect();
+  }, []); 
+
   return (
     <div className="programs-container">
       {/* Background blobs */}
@@ -37,13 +56,13 @@ const ProgramsAndInitiatives = () => {
         ))}
       </div>
 
-      <h1 className="programs-title">Programs & Initiatives</h1>
-      <p className="programs-intro">
+      <h1 className="programs-title pre-animate">Programs & Initiatives</h1>
+      <p className="programs-intro pre-animate">
         At Able Hearts Foundation, we are dedicated to creating meaningful and lasting change.
         Explore our key programs and initiatives aimed at empowering marginalized communities.
       </p>
 
-      <section className="program">
+      <section className="program pre-animate">
         <h2 className="program-title">Able Hearts Garden</h2>
         <div className="program-content">
           <img
@@ -57,7 +76,7 @@ const ProgramsAndInitiatives = () => {
         </div>
       </section>
 
-      <section className="program">
+      <section className="program pre-animate">
         <h2 className="program-title">Dynamic Talent Show</h2>
         <div className="program-content">
           <p className="program-description">
@@ -71,7 +90,7 @@ const ProgramsAndInitiatives = () => {
         </div>
       </section>
 
-      <section className="program">
+      <section className="program pre-animate">
         <h2 className="program-title">Mochudi Resource Center Visits</h2>
         <div className="program-content">
           <img
@@ -85,7 +104,7 @@ const ProgramsAndInitiatives = () => {
         </div>
       </section>
 
-      <section className="program">
+      <section className="program pre-animate">
         <h2 className="program-title">Tsogang Trust Support</h2>
         <div className="program-content">
           <p className="program-description">
@@ -99,7 +118,7 @@ const ProgramsAndInitiatives = () => {
         </div>
       </section>
 
-      <section className="program">
+      <section className="program pre-animate">
         <h2 className="program-title">COVID-19 Food Hampers</h2>
         <div className="program-content">
           <img
@@ -113,7 +132,7 @@ const ProgramsAndInitiatives = () => {
         </div>
       </section>
 
-      <section className="program">
+      <section className="program pre-animate">
         <h2 className="program-title">Lavender High Tea</h2>
         <div className="program-content">
           <p className="program-description">
@@ -127,7 +146,7 @@ const ProgramsAndInitiatives = () => {
         </div>
       </section>
 
-      <section className="program">
+      <section className="program pre-animate">
         <h2 className="program-title">School Donations</h2>
         <div className="program-content">
           <img

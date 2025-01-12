@@ -7,6 +7,27 @@
   z-index: 1;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base Animations */
+.pre-animate {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
 .scroll-to-top-btn {
   position: fixed;
   bottom: 20px;
@@ -121,11 +142,6 @@
   bottom: 0%;
   right: 0%;
   animation-delay: 9s;
-}
-
-.blob:hover {
-  transform: scale(1.1); /* Add hover interaction for blobs */
-  opacity: 1;
 }
 
 @keyframes float {

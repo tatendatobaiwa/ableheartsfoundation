@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import scribble from '/src/assets/scribblebackground.png';
 import './GetInvolved.css';
 
@@ -7,38 +7,23 @@ const blobImages = [
   '/src/assets/blob3.png',
   '/src/assets/blob4.png',
   '/src/assets/blob2.png',
-
 ];
 
 const GetInvolved = () => {
-  // Generate random blobs for the background
-  const generateBlobs = () => {
-    const blobCount = 25; // Number of blobs
-    const blobs = [];
-    for (let i = 0; i < blobCount; i++) {
-      const size = Math.random() * 200 + 100; // Size: 100px - 300px
-      const top = Math.random() * 300 + 'vh'; // Random vertical position
-      const left = Math.random() * 80 + 'vw'; // Random horizontal position
-      const blur = Math.random() * 5 + 2; // Blur radius: 2px - 7px
-      const image = blobImages[Math.floor(Math.random() * blobImages.length)]; // Random image from the array
+  const [isScrolled, setIsScrolled] = useState(false);
 
-      blobs.push(
-        <div
-          key={`blob-${i}`}
-          className="blob-animated"
-          style={{
-            width: `${size}px`,
-            height: `${size}px`,
-            top,
-            left,
-            filter: `blur(${blur}px)`,
-            backgroundImage: `url(${image})`,
-          }}
-        ></div>
-      );
-    }
-    return blobs;
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
   // Intersection Observer for animations
   useEffect(() => {
     const elements = document.querySelectorAll('.pre-animate');
@@ -62,10 +47,19 @@ const GetInvolved = () => {
   }, []);
 
   return (
+    <div className="page-wrapper">
+    {/* Background blobs */}
+    <div className="background-blobs">
+      {blobImages.map((blob, index) => (
+        <img
+          key={index}
+          src={blob}
+          alt={`Decorative blob ${index + 1}`}
+          className={`blob blob-${index + 1}`}
+        />
+      ))}
+    </div>
     <div className="get-involved-container">
-      {/* Background Blobs */}
-      {generateBlobs()}
-
       {/* Main Get Involved Section */}
       <div className="content-container pre-animate">
         <div className="left-content">
@@ -170,6 +164,12 @@ const GetInvolved = () => {
             />
           </div>
         </div>
+      </div>
+      {isScrolled && (
+        <button className="scroll-to-top-btn" onClick={scrollToTop}>
+          ↑
+        </button>
+      )}
       </div>
     </div>
   );
