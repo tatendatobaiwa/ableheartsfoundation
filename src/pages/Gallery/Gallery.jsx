@@ -55,10 +55,14 @@ const Gallery = () => {
     {
       id: 3,
       title: 'Lavender High Tea',
-      coverImage: '/src/assets/lavender-high-tea-cover.jpg',
+      coverImage: '/src/assets/lavender.jpg',
       description: 'A delightful gathering to raise funds and awareness for community development projects.',
       date: 'August 9, 2020',
-      images: []
+      images: [{ id: 1, url: '/src/assets/lavender.jpg', caption: 'Elegance and purpose: Guests enjoy the Lavender High Tea in their stunning attire.'},
+      { id: 2, url: '/src/assets/L1.jpg', caption: 'Moments of connection: Sharing laughter and inspiration at the Lavender High Tea.'},
+      { id: 3, url: '/src/assets/L2.jpg', caption: 'Words of empowerment: A speaker addressing attendees about community impact.'},
+      { id: 4, url: '/src/assets/L3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}      
+    ]
     },
     {
       id: 4,
