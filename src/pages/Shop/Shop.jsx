@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
 import './Shop.css';
 
 const blobImages = [
@@ -9,9 +10,8 @@ const blobImages = [
 ];
 
 const Shop = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null); // Tracks selected product
-  const [quantity, setQuantity] = useState(1);
-  const [size, setSize] = useState('');
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [enlargedImage, setEnlargedImage] = useState(null); // For zoomable images
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -22,71 +22,67 @@ const Shop = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  useEffect(() => {
-    const elements = document.querySelectorAll('.pre-animate');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-  
-    elements.forEach((element) => observer.observe(element));
-  
-    return () => observer.disconnect();
-  }, []); 
-  
-  const products = [
-    {
-      id: 1,
-      name: 'Classic White T-Shirt',
-      price: 20.0,
-      images: ['/src/assets/whiteTfront.jpg', '/src/assets/whiteTback.jpg'],
-      sizes: ['S', 'M', 'L'],
-    },
-    {
-      id: 2,
-      name: '"EQUALITY" White Sports Jersey',
-      price: 25.0,
-      images: ['/src/assets/whitejersey1.JPG', '/src/assets/whitejersey2.JPG'],
-      sizes: ['S', 'M', 'L', 'XL', '2XL'],
-    },
-    {
-      id: 3,
-      name: '"EQUALITY" Black Sports Jersey',
-      price: 30.0,
-      images: ['/src/assets/blackjerseyfront.jpg', '/src/assets/blackjerseyback.jpg'],
-      sizes: ['S', 'M', 'L', 'XL', '2XL'],
-    },
-  ];
-
   const openModal = (product) => {
     setSelectedProduct(product);
-    setQuantity(1); // Reset quantity
-    setSize(''); // Reset size
   };
 
   const closeModal = () => {
     setSelectedProduct(null);
   };
 
-  const handleAddToCart = () => {
-    if (!size) {
-      alert('Please select a size!');
-      return;
-    }
-    alert(`Added ${quantity} of ${selectedProduct.name} (Size: ${size}) to your cart!`);
-    closeModal();
+  const handleImageClick = (image) => {
+    setEnlargedImage(image);
   };
+
+  const closeEnlargedImage = () => {
+    setEnlargedImage(null);
+  };
+
+  const sendInquiry = () => {
+    if (!selectedProduct) return;
+
+    emailjs
+      .send(
+        'service_lh1cwy9',
+        'template_gf2z41u',
+        {
+          product_name: selectedProduct.name,
+          email_to: 'ableheartsfoundation@gmail.com',
+        },
+        '9J_E3w7XfhB57MM-Z'
+      )
+      .then(
+        (response) => {
+          alert('Inquiry sent successfully!');
+          closeModal();
+        },
+        (error) => {
+          alert('Failed to send inquiry. Please try again.');
+          console.error('Email error:', error);
+        }
+      );
+  };
+
+  const products = [
+    {
+      id: 1,
+      name: 'Classic White T-Shirt',
+      price: 20.0,
+      images: ['/src/assets/whiteTfront.jpg', '/src/assets/whiteTback.jpg'],
+    },
+    {
+      id: 2,
+      name: '"EQUALITY" White Sports Jersey',
+      price: 25.0,
+      images: ['/src/assets/whitejersey1.JPG', '/src/assets/whitejersey2.JPG'],
+    },
+    {
+      id: 3,
+      name: '"EQUALITY" Black Sports Jersey',
+      price: 30.0,
+      images: ['/src/assets/blackjerseyfront.jpg', '/src/assets/blackjerseyback.jpg'],
+    },
+  ];
 
   return (
     <div className="container-shop">
@@ -128,64 +124,46 @@ const Shop = () => {
         </div>
       </main>
 
+      {/* Modal for product details */}
       {selectedProduct && (
         <div className="modal-overlay-shop" onClick={closeModal}>
           <div
-            className="modal-content-shop "
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+            className="modal-content-shop"
+            onClick={(e) => e.stopPropagation()} // Prevent closing modal on click inside
           >
             <button className="close-button-shop" onClick={closeModal}>
               &times;
             </button>
             <div className="modal-head-shop">
-              <img
-                src={selectedProduct.images[0]}
-                alt={selectedProduct.name}
-                className="modal-image-shop"
-              />
-              <img
-                src={selectedProduct.images[1]}
-                alt={selectedProduct.name}
-                className="modal-image-shop"
-              />
+              {selectedProduct.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={selectedProduct.name}
+                  className="modal-image-shop zoomable"
+                  onClick={() => handleImageClick(image)}
+                />
+              ))}
               <h2 className="modal-title-shop">{selectedProduct.name}</h2>
               <p className="modal-price-shop">${selectedProduct.price.toFixed(2)}</p>
             </div>
-            <div className="modal-body-shop">
-              <label className="label-shop">
-                Size:
-                <select
-                  className="select-shop"
-                  value={size}
-                  onChange={(e) => setSize(e.target.value)}
-                >
-                  <option value="">Select a size</option>
-                  {selectedProduct.sizes.map((s) => (
-                    <option key={s} value={s}>
-                      {s}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label className="label-shop">
-                Quantity:
-                <input
-                  className="input-shop"
-                  type="number"
-                  min="1"
-                  value={quantity}
-                  onChange={(e) => setQuantity(e.target.value)}
-                />
-              </label>
-              <button className="add-to-cart-button-shop" onClick={handleAddToCart}>
-                Add to Cart
-              </button>
-            </div>
+            <button className="send-inquiry-button" onClick={sendInquiry}>
+              Send Inquiry
+            </button>
           </div>
         </div>
       )}
+
+      {/* Enlarged Image Modal */}
+      {enlargedImage && (
+        <div className="enlarged-image-overlay" onClick={closeEnlargedImage}>
+          <img src={enlargedImage} alt="Enlarged" className="enlarged-image" />
+        </div>
+      )}
+
+      {/* Scroll to Top Button */}
       {isScrolled && (
-        <button className="scroll-to-top-btn" onClick={scrollToTop}>
+        <button className="scroll-to-top-btn" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           ↑
         </button>
       )}

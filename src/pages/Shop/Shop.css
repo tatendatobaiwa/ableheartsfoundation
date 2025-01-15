@@ -5,7 +5,7 @@
     padding: 2rem 4rem;
     border-radius: 8px;
     font-family: Poppins, "sans-serif";
-    z-index: 1;
+    z-index: 2;
     background-color: #f9f9f9; /* Match background with other pages */
     color: #043F70;
   }
@@ -83,6 +83,7 @@
     align-items: center;
     z-index: 999;
     padding-top: 3rem;
+    z-index: 1000;
   }
   
   .modal-content-shop {
@@ -93,6 +94,7 @@
     width: 90%;
     position: relative;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
   }
   
   .close-button-shop {
@@ -140,6 +142,55 @@
     flex-direction: column;
     gap: 1rem;
   }
+
+  /* Modal images */
+.modal-image-shop.zoomable {
+  cursor: zoom-in;
+  transition: transform 0.2s ease-in-out;
+}
+
+.modal-image-shop.zoomable:hover {
+  transform: scale(1.05);
+}
+
+/* Enlarged image overlay */
+.enlarged-image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.enlarged-image {
+  max-width: 70%;
+  max-height: 60%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Send Inquiry Button */
+.send-inquiry-button {
+  background-color: #005BB5;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.send-inquiry-button:hover {
+  background-color: #043F70;
+}
   
   .label-shop {
     font-size: 1rem;
@@ -158,21 +209,6 @@
     margin-top: 0.5rem;
   }
   
-  .add-to-cart-button-shop {
-    background-color: #005BB5;
-    color: #fff;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .add-to-cart-button-shop:hover {
-    background-color: #043F70;
-  }
-
   .scroll-to-top-btn {
     position: fixed;
     bottom: 20px;
