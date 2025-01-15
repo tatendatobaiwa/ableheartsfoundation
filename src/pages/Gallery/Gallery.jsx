@@ -21,28 +21,91 @@ const Gallery = () => {
   const events = [
     {
       id: 1,
-      title: 'Basketball Tournament 2024',
-      coverImage: '/src/assets/basketball-cover.jpg',
-      description: 'Annual charity basketball tournament supporting local youth programs.',
-      date: 'March 15, 2024',
-      images: [
-        { id: 1, url: '/src/assets/basketball1.jpg', caption: 'Opening ceremony' },
-        { id: 2, url: '/src/assets/basketball2.jpg', caption: 'Championship game' },
-        { id: 3, url: '/src/assets/basketball3.jpg', caption: 'Award presentation' }
-      ]
+      title: 'Kedia Primary Donation',
+      coverImage: '/src/assets/kedia.jpeg',
+      description: 'A heartfelt initiative to provide essential resources and support to Kedia Primary School.',
+      date: 'January 15, 2023',
+      images: [{ id: 1, url: '/src/assets/kedia.jpeg', caption: 'Opening ceremony'},
+      { id: 2, url: '/src/assets/K1.jpeg', caption: 'Opening ceremony'},
+      { id: 3, url: 'src/assets/K2.jpeg', caption: 'Opening ceremony'},
+      { id: 4, url: 'src/assets/K3.jpeg', caption: 'Opening ceremony'},
+      { id: 5, url: 'src/assets/K4.jpeg', caption: 'Opening ceremony'},
+      { id: 6, url: 'src/assets/K5.jpeg', caption: 'Opening ceremony'},
+      { id: 7, url: 'src/assets/K6.jpeg', caption: 'Opening ceremony'}
+        ]
     },
     {
       id: 2,
-      title: 'Youth Sports Camp',
-      coverImage: '/src/assets/camp-cover.jpg',
-      description: 'Summer camp teaching various sports to underprivileged youth.',
-      date: 'February 20, 2024',
-      images: [
-        { id: 1, url: '/src/assets/camp1.jpg', caption: 'Morning exercises' },
-        { id: 2, url: '/src/assets/camp2.jpg', caption: 'Soccer training' }
-      ]
+      title: 'Shakawe JSS Donation',
+      coverImage: '/src/assets/shakawe-jss-cover.jpg',
+      description: 'A generous contribution aimed at enhancing the learning environment for students at Shakawe Junior Secondary School.',
+      date: 'February 20, 2023',
+      images: []
     },
-    // Add 8 more events with their respective images
+    {
+      id: 3,
+      title: 'Lavender High Tea',
+      coverImage: '/src/assets/lavender-high-tea-cover.jpg',
+      description: 'A delightful gathering to raise funds and awareness for community development projects.',
+      date: 'March 25, 2023',
+      images: []
+    },
+    {
+      id: 4,
+      title: 'Covid-19 Community Relief Packages',
+      coverImage: '/src/assets/covid19-relief-cover.jpg',
+      description: 'A dedicated effort to distribute essential supplies to communities affected by the pandemic.',
+      date: 'April 10, 2023',
+      images: []
+    },
+    {
+      id: 5,
+      title: 'Tsogang Trust',
+      coverImage: '/src/assets/tsogang-trust-cover.jpg',
+      description: 'Collaboration with Tsogang Trust to empower local communities through education and skill development.',
+      date: 'May 5, 2023',
+      images: []
+    },
+    {
+      id: 6,
+      title: 'Mochudi Resource Center',
+      coverImage: '/src/assets/mochudi-resource-center-cover.jpg',
+      description: 'An initiative to equip the Mochudi Resource Center with vital resources to foster community engagement.',
+      date: 'June 15, 2023',
+      images: []
+    },
+    {
+      id: 7,
+      title: 'Dynamic Talent Show',
+      coverImage: '/src/assets/dynamic-talent-show-cover.jpg',
+      description: 'A showcase of vibrant talents aimed at celebrating creativity and diversity.',
+      date: '',
+      images: []
+    },
+    {
+      id: 8,
+      title: 'Lephoi Able Hearts Garden and Fun Day',
+      coverImage: '/src/assets/lephoi-able-hearts-cover.jpg',
+      description: 'A fun-filled day celebrating community spirit and sustainable gardening initiatives.',
+      date: '',
+      images: []
+    },
+    {
+      id: 9,
+      title: 'News Articles',
+      coverImage: '/src/assets/news-articles-cover.jpg',
+      description: 'A collection of impactful news articles highlighting community achievements and milestones.',
+      date: '',
+      images: []
+    },
+    {
+      id: 10,
+      title: 'First Ever Event',
+      coverImage: '/src/assets/first-ever-event-cover.jpg',
+      description: 'The landmark event that marked the beginning of our journey in making a difference.',
+      date: '',
+      images: []
+    }
   ];
 
   const handleEventClick = (event) => {
