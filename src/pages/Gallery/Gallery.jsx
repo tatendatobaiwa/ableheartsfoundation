@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Gallery.css';
 
 const blobImages = [
@@ -12,10 +12,19 @@ const Gallery = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const eventsPerPage = 4; // Number of events per page
-  const [loadingImages, setLoadingImages] = useState(new Set());
+  const [isLoaded, setIsLoaded] = useState(false);
 
+  useEffect(() => {
+    setIsLoaded(true);
+    
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Event data structure with sub-images
   const events = [
     {
       id: 1,
@@ -35,10 +44,13 @@ const Gallery = () => {
     {
       id: 2,
       title: 'Shakawe JSS Donation',
-      coverImage: '/src/assets/shakawe-jss-cover.jpg',
+      coverImage: '/src/assets/shakawedono.jpg',
       description: 'A generous contribution aimed at enhancing the learning environment for students at Shakawe Junior Secondary School.',
       date: 'April 29, 2021',
-      images: []
+      images: [{ id: 1, url: '/src/assets/shakawedono.jpg', caption: 'Collaborative efforts: Volunteers working together to organize donations for Shakawe JSS.'},
+      { id: 2, url: '/src/assets/S1.jpg', caption: 'Prepared with care: A set of new uniforms ready to bring smiles to students in need.'},
+      { id: 3, url: '/src/assets/S2.jpg', caption: 'Making a difference: Reception of donation boxes from Able Hearts.'}      
+    ]
     },
     {
       id: 3,
@@ -106,17 +118,6 @@ const Gallery = () => {
     }
   ];
 
-  const totalEvents = events.length;
-  const totalPages = Math.ceil(totalEvents / eventsPerPage);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 300);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const handleEventClick = (event) => {
     setSelectedEvent(event);
     setSelectedImage(null);
@@ -134,33 +135,8 @@ const Gallery = () => {
     setSelectedImage(null);
   };
 
-  const handleLazyLoad = (src) => {
-    setLoadingImages((prev) => new Set(prev).add(src));
-  };
-
-  const handleImageLoad = (src) => {
-    setLoadingImages((prev) => {
-      const newSet = new Set(prev);
-      newSet.delete(src);
-      return newSet;
-    });
-  };
-
-  const getPaginatedEvents = useCallback(() => {
-    const startIndex = (currentPage - 1) * eventsPerPage;
-    return events.slice(startIndex, startIndex + eventsPerPage);
-  }, [currentPage, events]);
-
-  const nextPage = () => {
-    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
-  };
-
-  const prevPage = () => {
-    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
-  };
-
   return (
-    <div className="container-gallery">
+    <div className={`container-gallery ${isLoaded ? 'content-loaded' : ''}`}>
       <div className="background-blobs-gallery">
         {blobImages.map((blob, index) => (
           <img
@@ -172,17 +148,17 @@ const Gallery = () => {
         ))}
       </div>
 
-      <header className="header-gallery">
+      <div className={`header-gallery pre-animate-gallery ${isLoaded ? 'fade-in-gallery' : ''}`}>
         <h1 className="title-gallery">Event Gallery</h1>
         <p className="subtitle-gallery">
           Explore our events and the moments that make them special.
         </p>
-      </header>
+      </div>
 
       {/* Main Event Grid */}
-      <main className="main-gallery">
+      <main className={`main-gallery pre-animate-gallery ${isLoaded ? 'fade-in-gallery' : ''}`}>
         <div className="events-grid">
-          {getPaginatedEvents().map((event) => (
+          {events.map((event) => (
             <div
               key={event.id}
               className="event-card"
@@ -191,11 +167,7 @@ const Gallery = () => {
               <img
                 src={event.coverImage}
                 alt={event.title}
-                className={`event-cover-image ${
-                  loadingImages.has(event.coverImage) ? 'loading' : ''
-                }`}
-                onLoad={() => handleImageLoad(event.coverImage)}
-                onError={(e) => (e.target.src = '/src/assets/placeholder.png')} // Placeholder for broken images
+                className="event-cover-image"
               />
               <div className="event-card-overlay">
                 <h3 className="event-title">{event.title}</h3>
@@ -206,28 +178,7 @@ const Gallery = () => {
         </div>
       </main>
 
-      {/* Pagination Controls */}
-      <div className="pagination-gallery">
-        <button
-          onClick={prevPage}
-          className="pagination-btn"
-          disabled={currentPage === 1}
-        >
-          Previous
-        </button>
-        <span className="pagination-info">
-          Page {currentPage} of {totalPages}
-        </span>
-        <button
-          onClick={nextPage}
-          className="pagination-btn"
-          disabled={currentPage === totalPages}
-        >
-          Next
-        </button>
-      </div>
-
-      {/* Event Modal */}
+      {/* Event Modal with Sub-Gallery */}
       {selectedEvent && (
         <div className="modal-overlay-gallery" onClick={closeEventModal}>
           <div
@@ -237,11 +188,13 @@ const Gallery = () => {
             <button className="close-button-gallery" onClick={closeEventModal}>
               &times;
             </button>
+            
             <div className="event-modal-header">
-              <h2>{selectedEvent.title}</h2>
-              <p>{selectedEvent.date}</p>
-              <p>{selectedEvent.description}</p>
+              <h2 className="event-modal-title">{selectedEvent.title}</h2>
+              <p className="event-modal-date">{selectedEvent.date}</p>
+              <p className="event-modal-description">{selectedEvent.description}</p>
             </div>
+
             <div className="event-images-grid">
               {selectedEvent.images.map((image) => (
                 <div
@@ -252,16 +205,10 @@ const Gallery = () => {
                   <img
                     src={image.url}
                     alt={image.caption}
-                    className={`event-image ${
-                      loadingImages.has(image.url) ? 'loading' : ''
-                    }`}
-                    onLoad={() => handleImageLoad(image.url)}
-                    onError={(e) =>
-                      (e.target.src = '/src/assets/placeholder.png') // Placeholder for broken images
-                    }
+                    className="event-image"
                   />
                   <div className="event-image-overlay">
-                    <p>{image.caption}</p>
+                    <p className="event-image-caption">{image.caption}</p>
                   </div>
                 </div>
               ))}
@@ -284,19 +231,16 @@ const Gallery = () => {
               src={selectedImage.url}
               alt={selectedImage.caption}
               className="modal-image-gallery"
-              onError={(e) =>
-                (e.target.src = '/src/assets/placeholder.png') // Placeholder for broken images
-              }
             />
-            <p>{selectedImage.caption}</p>
+            <p className="modal-image-caption">{selectedImage.caption}</p>
           </div>
         </div>
       )}
 
       {/* Scroll to Top Button */}
       {isScrolled && (
-        <button
-          className="scroll-to-top-btn-gallery"
+        <button 
+          className="scroll-to-top-btn-gallery" 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           ↑
