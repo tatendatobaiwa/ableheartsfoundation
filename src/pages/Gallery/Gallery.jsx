@@ -81,10 +81,10 @@ const Gallery = () => {
     {
       id: 5,
       title: 'Tsogang Trust',
-      coverImage: '/src/assets/tsogang-trust-cover.jpg',
+      coverImage: '/src/assets/tsogangtrust.jpg',
       description: 'Collaboration with Tsogang Trust to empower local communities through education and skill development.',
       date: 'October 27, 2022',
-      images: [{ id: 1, url: '/src/assets/tsogang-trust-cover.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy',
+      images: [{ id: 1, url: '/src/assets/tsogangtrust.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
       { id: 2, url: 'src/assets/T1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},      
       { id: 3, url: '/src/assets/T2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
       { id: 4, url: '/src/assets/T3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}
@@ -93,7 +93,7 @@ const Gallery = () => {
     {
       id: 6,
       title: 'Mochudi Resource Center',
-      coverImage: '/src/assets/tsogangtrust.jpg',
+      coverImage: '/src/assets/mochud.jpg',
       description: 'An initiative to equip the Mochudi Resource Center with vital resources to foster community engagement.',
       date: 'April 22, 2021 ',
       images: []
