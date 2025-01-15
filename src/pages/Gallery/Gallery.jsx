@@ -84,10 +84,10 @@ const Gallery = () => {
       coverImage: '/src/assets/tsogang-trust-cover.jpg',
       description: 'Collaboration with Tsogang Trust to empower local communities through education and skill development.',
       date: 'October 27, 2022',
-      images: [{ id: 1, url: '/src/assets/C4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy',
-      { id: 2, url: '/src/assets/C4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},      
-      { id: 3, url: '/src/assets/C4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 4, url: '/src/assets/C4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}
+      images: [{ id: 1, url: '/src/assets/tsogang-trust-cover.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy',
+      { id: 2, url: 'src/assets/T1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},      
+      { id: 3, url: '/src/assets/T2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 4, url: '/src/assets/T3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}
     ]
     },
     {
