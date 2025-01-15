@@ -82,6 +82,7 @@
     justify-content: center;
     align-items: center;
     z-index: 999;
+    padding-top: 3rem;
   }
   
   .modal-content-shop {
@@ -225,7 +226,7 @@
     overflow: hidden;
   }
   
-  .blob {
+  .blobs {
     position: absolute;
     width: 600px;
     height: auto;
@@ -233,27 +234,27 @@
     animation: float 20s infinite ease-in-out;
   }
   
-  .blob-1 {
-    top: 10%;
-    left: 5%;
+  .blobs.blobs-1 {
+    top: 60%;
+    left: -20%;
     animation-delay: 0s;
   }
   
-  .blob-2 {
-    top: 30%;
-    right: 10%;
+  .blobs.blobs-2 {
+    top: 0%;
+    right: -10%;
     animation-delay: 3s;
   }
   
-  .blob-3 {
+  .blobs.blobs-3 {
     bottom: 30%;
-    left: 0%;
+    left: -10%;
     animation-delay: 6s;
   }
   
-  .blob-4 {
-    bottom: 0%;
-    right: 0%;
+  .blobs.blobs-4 {
+    bottom: -50%;
+    right: 20%;
     animation-delay: 9s;
   }
   
@@ -282,5 +283,6 @@
     .modal-content-shop {
       padding: 1.5rem;
     }
+
   }
   
