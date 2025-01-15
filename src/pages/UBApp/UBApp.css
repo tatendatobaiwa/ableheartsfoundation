@@ -129,3 +129,8 @@
   color: white;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .ub-app-page-background {
+    padding-top: 2rem;
+  }
+}

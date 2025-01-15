@@ -129,3 +129,9 @@
   color: white;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .biust-app-page-background {
+    padding-top: 2rem;
+  }
+}
