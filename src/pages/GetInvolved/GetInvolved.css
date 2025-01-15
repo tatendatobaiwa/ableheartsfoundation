@@ -13,6 +13,8 @@
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
+  background-color: #f9f9f9;
+
 }
 
 .blobg {
@@ -86,7 +88,7 @@
     gap: 2rem;
     position: relative;
     padding: 0 4rem;
-    z-index: 3
+    z-index: 3;
   }
   
 @keyframes fadeIn {

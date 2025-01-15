@@ -11,10 +11,14 @@ const blobImages = [
 
 const Shop = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [enlargedImage, setEnlargedImage] = useState(null); // For zoomable images
+  const [enlargedImage, setEnlargedImage] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    // Add the fade-in class after component mounts
+    setIsLoaded(true);
+    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 300);
     };
@@ -85,8 +89,7 @@ const Shop = () => {
   ];
 
   return (
-    <div className="container-shop">
-      {/* Background blobs */}
+    <div className={`container-shop ${isLoaded ? 'content-loaded' : ''}`}>
       <div className="background-blobs">
         {blobImages.map((blob, index) => (
           <img
@@ -97,14 +100,15 @@ const Shop = () => {
           />
         ))}
       </div>
-      <div className="shophead pre-animate">
+      
+      <div className={`shophead pre-animate ${isLoaded ? 'fade-in' : ''}`}>
         <h1 className="title-shop">Shop with a Purpose</h1>
         <p className="subtitle-shop">
           Support our mission by purchasing items from our shop. Every purchase helps fund our initiatives.
         </p>
       </div>
 
-      <main className="main-shop pre-animate">
+      <main className={`main-shop pre-animate ${isLoaded ? 'fade-in' : ''}`}>
         <div className="product-grid-shop">
           {products.map((product) => (
             <div
@@ -129,7 +133,7 @@ const Shop = () => {
         <div className="modal-overlay-shop" onClick={closeModal}>
           <div
             className="modal-content-shop"
-            onClick={(e) => e.stopPropagation()} // Prevent closing modal on click inside
+            onClick={(e) => e.stopPropagation()}
           >
             <button className="close-button-shop" onClick={closeModal}>
               &times;
@@ -163,7 +167,10 @@ const Shop = () => {
 
       {/* Scroll to Top Button */}
       {isScrolled && (
-        <button className="scroll-to-top-btn" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <button 
+          className="scroll-to-top-btn" 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           ↑
         </button>
       )}

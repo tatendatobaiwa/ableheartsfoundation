@@ -5,6 +5,7 @@
   border-radius: 8px;
   font-family: Poppins, "sans-serif";
   z-index: 1;
+  background-color: #f9f9f9;
 }
 
 @keyframes fadeIn {
