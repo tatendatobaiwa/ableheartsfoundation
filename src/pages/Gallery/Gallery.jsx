@@ -67,10 +67,16 @@ const Gallery = () => {
     {
       id: 4,
       title: 'Covid-19 Community Relief Packages',
-      coverImage: '/src/assets/covid19-relief-cover.jpg',
+      coverImage: '/src/assets/covid.jpg',
       description: 'A dedicated effort to distribute essential supplies to communities affected by the pandemic.',
       date: '2020',
-      images: []
+      images: [{ id: 1, url: '/src/assets/L3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 2, url: 'src/assets/C1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 3, url: 'src/assets/C2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 4, url: '/src/assets/C3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 5, url: '/src/assets/C4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}
+
+      ]
     },
     {
       id: 5,
@@ -78,12 +84,16 @@ const Gallery = () => {
       coverImage: '/src/assets/tsogang-trust-cover.jpg',
       description: 'Collaboration with Tsogang Trust to empower local communities through education and skill development.',
       date: 'October 27, 2022',
-      images: []
+      images: [{ id: 1, url: '/src/assets/C4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy',
+      { id: 2, url: '/src/assets/C4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},      
+      { id: 3, url: '/src/assets/C4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 4, url: '/src/assets/C4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}
+    ]
     },
     {
       id: 6,
       title: 'Mochudi Resource Center',
-      coverImage: '/src/assets/mochudi-resource-center-cover.jpg',
+      coverImage: '/src/assets/tsogangtrust.jpg',
       description: 'An initiative to equip the Mochudi Resource Center with vital resources to foster community engagement.',
       date: 'April 22, 2021 ',
       images: []
