@@ -65,10 +65,10 @@ const Header = () => {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a href="/get-involved">AbleHearts UB</a>
+                    <a href="/ablehearts-ub">AbleHearts UB</a>
                   </li>
                   <li>
-                    <a href="/get-involved">AbleHearts BIUST</a>
+                    <a href="/ablehearts-biust">AbleHearts BIUST</a>
                   </li>
                   <li>
                     <a href="/get-involved">Partner with Us</a>

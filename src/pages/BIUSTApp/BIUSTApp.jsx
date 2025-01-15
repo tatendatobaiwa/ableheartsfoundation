@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import jsPDF from 'jspdf';
 import emailjs from 'emailjs-com';
@@ -14,7 +14,6 @@ const blobImages = [
 const BIUSTApp = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', reason: '', message: '' });
   const [errors, setErrors] = useState({});
-  const [blobs, setBlobs] = useState([]);
   const [showSuccess, setShowSuccess] = useState(false);
   const navigate = useNavigate();
 
@@ -28,39 +27,6 @@ const BIUSTApp = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
-  useEffect(() => {
-    const generateBlobs = () => {
-      const blobCount = 25;
-      const generatedBlobs = [];
-
-      for (let i = 0; i < blobCount; i++) {
-        const size = Math.random() * 200 + 100;
-        const top = Math.random() * 100 + 'vh';
-        const left = Math.random() * 80 + 'vw';
-        const blur = Math.random() * 5 + 2;
-        const image = blobImages[Math.floor(Math.random() * blobImages.length)];
-
-        generatedBlobs.push(
-          <div
-            key={`blob-${i}`}
-            className="blob-animated"
-            style={{
-              width: `${size}px`,
-              height: `${size}px`,
-              top,
-              left,
-              filter: `blur(${blur}px)`,
-              backgroundImage: `url(${image})`,
-            }}
-          ></div>
-        );
-      }
-      return generatedBlobs;
-    };
-
-    setBlobs(generateBlobs());
-  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -106,53 +72,66 @@ const BIUSTApp = () => {
   };
 
   return (
-    <div className="biust-app-background">
-      {blobs}
-
+    <div className="biust-app-page-background">
+      {/* Background blobs */}
+      <div className="biust-app-background-blobs">
+        {blobImages.map((blob, index) => (
+          <img
+            key={index}
+            src={blob}
+            alt={`Decorative blob ${index + 1}`}
+            className={`biust-app-blob biust-app-blob-${index + 1}`}
+          />
+        ))}
+      </div>
       <div className="biust-app-container">
-        <div className="logo-container">
-          <img src="/src/assets/biust.jpg" alt="BIUST Logo" className="logo" />
+        <div className="biust-app-logo-container">
+          <img src="/src/assets/biust.jpg" alt="BIUST Logo" className="biust-app-logo" />
         </div>
 
-        <h1>BIUST Application Form</h1>
-        <form className="application-form" onSubmit={handleSubmit}>
-          <label>Name</label>
+        <h1 className="biust-app-title">BIUST Application Form</h1>
+        <form className="biust-app-application-form" onSubmit={handleSubmit}>
+          <label className="biust-app-label">Name</label>
           <input
             type="text"
             value={formData.name}
+            className="biust-app-input"
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
-          {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
+          {errors.name && <p className="biust-app-error">{errors.name}</p>}
 
-          <label>Email</label>
+          <label className="biust-app-label">Email</label>
           <input
             type="email"
             value={formData.email}
+            className="biust-app-input"
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           />
-          {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
+          {errors.email && <p className="biust-app-error">{errors.email}</p>}
 
-          <label>Phone Number</label>
+          <label className="biust-app-label">Phone Number</label>
           <input
             type="text"
             value={formData.phone}
+            className="biust-app-input"
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
           />
-          {errors.phone && <p style={{ color: 'red' }}>{errors.phone}</p>}
+          {errors.phone && <p className="biust-app-error">{errors.phone}</p>}
 
-          <label>Why do you want to join AbleHearts BIUST?</label>
+          <label className="biust-app-label">Why do you want to join AbleHearts BIUST?</label>
           <textarea
             value={formData.reason}
+            className="biust-app-textarea"
             onChange={(e) => setFormData({ ...formData, reason: e.target.value })}
           ></textarea>
-          {errors.reason && <p style={{ color: 'red' }}>{errors.reason}</p>}
+          {errors.reason && <p className="biust-app-error">{errors.reason}</p>}
 
-          <button type="submit" className="submit-button">
+          <button type="submit" className="biust-app-submit-button">
             Submit
           </button>
           <button
             type="button"
-            className="submit-button"
+            className="biust-app-back-button"
             onClick={() => navigate('/get-involved')}
           >
             Back
@@ -161,9 +140,14 @@ const BIUSTApp = () => {
       </div>
 
       {showSuccess && (
-        <div className="success-popup">
+        <div className="biust-app-success-popup">
           <p>Thank you! Your application has been submitted successfully.</p>
-          <button onClick={() => setShowSuccess(false)}>Close</button>
+          <button
+            className="biust-app-success-close-button"
+            onClick={() => setShowSuccess(false)}
+          >
+            Close
+          </button>
         </div>
       )}
     </div>
