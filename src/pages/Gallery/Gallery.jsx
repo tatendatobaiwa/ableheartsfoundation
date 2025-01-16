@@ -108,10 +108,25 @@ const Gallery = () => {
     {
       id: 7,
       title: 'Dynamic Talent Show',
-      coverImage: '/src/assets/dynamic-talent-show-cover.jpg',
+      coverImage: '/src/assets/talentshow.jpeg',
       description: 'A showcase of vibrant talents aimed at celebrating creativity and diversity.',
       date: 'August 20, 2023',
-      images: []
+      images: [{ id: 1, url: '/src/assets/talentshow.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 2, url: '/src/assets/DT1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 3, url: '/src/assets/DT2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 4, url: '/src/assets/DT3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 5, url: '/src/assets/DT4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 6, url: '/src/assets/DT5.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 7, url: '/src/assets/DT6.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 8, url: '/src/assets/DT7.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 9, url: '/src/assets/DT8.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 10, url: '/src/assets/DT9.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 11, url: '/src/assets/DT10.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 12, url: '/src/assets/DT11.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 13, url: '/src/assets/DT12.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 14, url: '/src/assets/DT13.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 15, url: '/src/assets/DT14.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}
+    ]
     },
     {
       id: 8,
