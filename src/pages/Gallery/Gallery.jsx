@@ -134,14 +134,14 @@ const Gallery = () => {
       coverImage: '/src/assets/garden.jpg',
       description: 'A fun-filled day celebrating community spirit and sustainable gardening initiatives.',
       date: 'August 15, 2020',
-      images: [{ id: 1, url: '/src/assets/garden.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 2, url: '/src/assets/LG1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 3, url: '/src/assets/LG2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 4, url: '/src/assets/LG3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 5, url: '/src/assets/LG4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 6, url: '/src/assets/LG5.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 7, url: '/src/assets/LG6.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 8, url: '/src/assets/LG7.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}]
+      images: [{ id: 1, url: '/src/assets/garden.jpg', caption: 'Able Hearts Garden Grand Opening: The Grand Opening!'},
+      { id: 2, url: '/src/assets/LG1.jpg', caption: 'Our Selfless Leader: Ms. Sakshi Bhargava, our visionary founder, leading with compassion and dedication.'},
+      { id: 3, url: '/src/assets/LG2.jpg', caption: 'Creative Moments: The kids had an amazing time unleashing their creativity and making beautiful beads during the fun day!'},
+      { id: 4, url: '/src/assets/LG3.jpg', caption: 'Creative Moments: The kids had an amazing time unleashing their creativity and making beautiful beads during the fun day!'},
+      { id: 5, url: '/src/assets/LG4.jpg', caption: 'Leading with Love: Our founder, Ms. Sakshi Bhargava, guiding the kids as they create their beautiful beadwork—turning moments into memories.'},
+      { id: 6, url: '/src/assets/LG5.jpg', caption: 'Spreading love and hope: Able Hearts at the Lephoi Centre, delivering essential donations to those in need.'},
+      { id: 7, url: '/src/assets/LG6.jpg', caption: 'Together for a cause: The Able Hearts crew, united in service and compassion.'},
+      { id: 8, url: '/src/assets/LG7.jpeg', caption: 'UCCSA Lephoi Centre: For Learners with Visual Impairment'}]
     },
     {
       id: 9,
@@ -149,10 +149,11 @@ const Gallery = () => {
       coverImage: '/src/assets/NP1.jpg',
       description: 'A collection of impactful news articles highlighting community achievements and milestones.',
       date: '',
-      images: [{ id: 1, url: '/src/assets/NP1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 2, url: '/src/assets/NP2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 3, url: '/src/assets/NP3.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 4, url: '/src/assets/NP4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}]
+      images: [{ id: 1, url: '/src/assets/NP1.jpg', caption: 'Celebrating Milestones: Huge thanks to our media supporters for featuring the Able Hearts garden handover—your coverage helps us inspire more change!'},
+      { id: 2, url: '/src/assets/NP2.jpg', caption: 'A Musical Moment: Special appreciation to Kgosi Moagi for performing a beautiful song during the Able Hearts garden handover ceremony at the Lephoi Centre. Your talent added so much meaning to the day!'},
+      { id: 3, url: '/src/assets/NP3.jpeg', caption: 'Grateful for the Spotlight: A heartfelt thank you to The Voice Newspaper Botswana and @themonitor for sharing our story and amplifying our mission!'},
+      { id: 4, url: '/src/assets/NP4.jpg', caption: 'Making Waves: Thank you to The Voice Newspaper Botswana and @themonitor for showcasing our journey of giving back and supporting vulnerable communities. Together, we make a difference!'},
+      { id: 4, url: '/src/assets/NP5.jpg', caption: 'Amplifying Impact: Thank you @therealyaronafm for giving us a platform to share our mission and reach the hearts of so many. Your support helps us make a greater difference in the lives of vulnerable communities!'}]
     },
     {
       id: 10,
@@ -160,10 +161,10 @@ const Gallery = () => {
       coverImage: '/src/assets/FE1.jpeg',
       description: 'The landmark event that marked the beginning of our journey in making a difference.',
       date: 'August 25, 2017',
-      images: [{ id: 1, url: '/src/assets/FE1.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 2, url: '/src/assets/FE2.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 3, url: '/src/assets/FE3.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 4, url: '/src/assets/FE4.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}]
+      images: [{ id: 1, url: '/src/assets/FE1.jpeg', caption: 'A Moment of Unity: Students gather to celebrate the first Able Hearts event, fostering inclusion and hope.'},
+      { id: 2, url: '/src/assets/FE2.jpeg', caption: 'Spreading Smiles: Engaging with the youth through fun and learning.'},
+      { id: 3, url: '/src/assets/FE3.jpeg', caption: 'Empowering Through Giving: Distributing clothes, books, and toys to ensure brighter tomorrows for the children.'},
+      { id: 4, url: '/src/assets/FE4.jpeg', caption: 'Bridging Gaps: Smiles abound as donations of school shoes bring joy and opportunity.'}]
     }
   ];
 
@@ -268,18 +269,18 @@ const Gallery = () => {
 
       {/* Individual Image Modal */}
       {selectedImage && (
-        <div className="modal-overlay-gallery" onClick={closeImageModal}>
+        <div className="indmodal-overlay-gallery" onClick={closeImageModal}>
           <div
-            className="modal-content-gallery image-modal"
+            className="indmodal-content-gallery image-modal"
             onClick={(e) => e.stopPropagation()}
           >
-            <button className="close-button-gallery" onClick={closeImageModal}>
+            <button className="indclose-button-gallery" onClick={closeImageModal}>
               &times;
             </button>
             <img
               src={selectedImage.url}
               alt={selectedImage.caption}
-              className="modal-image-gallery"
+              className="indmodal-image-gallery"
             />
             <p className="modal-image-caption">{selectedImage.caption}</p>
           </div>
