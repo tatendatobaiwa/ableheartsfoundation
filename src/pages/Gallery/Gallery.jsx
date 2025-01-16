@@ -70,11 +70,11 @@ const Gallery = () => {
       coverImage: '/src/assets/covid.jpg',
       description: 'A dedicated effort to distribute essential supplies to communities affected by the pandemic.',
       date: '2020',
-      images: [{ id: 1, url: '/src/assets/L3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 2, url: 'src/assets/C1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 3, url: 'src/assets/C2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 4, url: '/src/assets/C3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 5, url: '/src/assets/C4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}
+      images: [{ id: 1, url: '/src/assets/covid.jpg', caption: 'A heartwarming moment: Able Hearts Foundation spreading hope with COVID relief packages to the elderly, blending compassion and community support.'},
+      { id: 2, url: 'src/assets/C1.jpg', caption: 'A closer look: The thoughtful contents of an Able Hearts COVID relief package, filled with essentials to brighten the lives of the elderly.'},
+      { id: 3, url: 'src/assets/C2.jpg', caption: 'A closer look: The thoughtful contents of an Able Hearts COVID relief package, filled with essentials to brighten the lives of the elderly.'},
+      { id: 4, url: '/src/assets/C3.jpg', caption: 'A moment of unity: The Able Hearts team with Honourable Member of Parliament, Mr. Ignatius Moswaane, working together to support our community.'},
+      { id: 5, url: '/src/assets/C4.jpg', caption: 'A heartwarming moment: Able Hearts Foundation spreading hope with COVID relief packages to the elderly, blending compassion and community support.'}
 
       ]
     },
@@ -84,10 +84,10 @@ const Gallery = () => {
       coverImage: '/src/assets/tsogangtrust.jpg',
       description: 'Collaboration with Tsogang Trust to empower local communities through education and skill development.',
       date: 'October 27, 2022',
-      images: [{ id: 1, url: '/src/assets/tsogangtrust.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 2, url: 'src/assets/T1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},      
-      { id: 3, url: '/src/assets/T2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 4, url: '/src/assets/T3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}
+      images: [{ id: 1, url: '/src/assets/tsogangtrust.jpg', caption: 'A generous gesture: Senn Foods providing essential foodstuffs and supplies to Tsogang Trust, fueling hope and community support.'},
+      { id: 2, url: 'src/assets/T1.jpg', caption: 'Our Selfless Leader: Ms. Sakshi Bhargava, our visionary founder, leading with compassion and dedication.'},      
+      { id: 3, url: '/src/assets/T2.jpg', caption: 'A heartwarming connection: Ms. Sakshi Bhargava with one of the bright young minds at Tsogang Trust, inspiring the next generation with care and compassion.'},
+      { id: 4, url: '/src/assets/T3.jpg', caption: 'A generous gesture: Senn Foods providing essential foodstuffs and supplies to Tsogang Trust, fueling hope and community support.'}
     ]
     },
     {
@@ -96,13 +96,13 @@ const Gallery = () => {
       coverImage: '/src/assets/mochud.jpg',
       description: 'An initiative to equip the Mochudi Resource Center with vital resources to foster community engagement.',
       date: 'April 22, 2021 ',
-      images: [{ id: 1, url: '/src/assets/mochud.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 2, url: '/src/assets/M1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 3, url: '/src/assets/M2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 4, url: '/src/assets/M3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 5, url: '/src/assets/M4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 6, url: '/src/assets/M5.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 7, url: '/src/assets/M6.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}
+      images: [{ id: 1, url: '/src/assets/mochud.jpg', caption: 'A moment of impact: The Able Hearts team delivering essential supplies to the Mochudi Resource Center, strengthening support for the community.'},
+      { id: 2, url: '/src/assets/M1.jpg', caption: 'A touch of kindness: Ms. Sakshi Bhargava sharing a special moment with the little ones, spreading love and encouragement at Tsogang Trust.'},
+      { id: 3, url: '/src/assets/M2.jpg', caption: 'On the ground: The Able Hearts team sorting packages on-site at Mochudi Resource Center, ensuring every child receives the support they need.'},
+      { id: 4, url: '/src/assets/M3.jpg', caption: 'A moment of impact: The Able Hearts team delivering essential supplies to the Mochudi Resource Center, strengthening support for the community.'},
+      { id: 5, url: '/src/assets/M4.jpg', caption: 'A closer look: The thoughtful contents of an Able Hearts Mochudi Resource Center package, filled with essentials to brighten the lives of the Children.'},
+      { id: 6, url: '/src/assets/M5.jpg', caption: 'Sharing knowledge: The crew engaging with the Children through fun and learning.'},
+      { id: 7, url: '/src/assets/M6.jpg', caption: 'A moment of giving: The Able Hearts team proudly presenting the carefully prepared packages, bringing hope and support to those in need.'}
     ]
     },
     {
@@ -111,21 +111,20 @@ const Gallery = () => {
       coverImage: '/src/assets/talentshow.jpeg',
       description: 'A showcase of vibrant talents aimed at celebrating creativity and diversity.',
       date: 'August 20, 2023',
-      images: [{ id: 1, url: '/src/assets/talentshow.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 2, url: '/src/assets/DT1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 3, url: '/src/assets/DT2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 4, url: '/src/assets/DT3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 5, url: '/src/assets/DT4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 6, url: '/src/assets/DT5.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 7, url: '/src/assets/DT6.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 8, url: '/src/assets/DT7.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 9, url: '/src/assets/DT8.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 10, url: '/src/assets/DT9.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 11, url: '/src/assets/DT10.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 12, url: '/src/assets/DT11.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 13, url: '/src/assets/DT12.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 14, url: '/src/assets/DT13.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
-      { id: 15, url: '/src/assets/DT14.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}
+      images: [{ id: 1, url: '/src/assets/talentshow.jpeg', caption: ''},
+      { id: 2, url: '/src/assets/DT1.jpg', caption: ''},
+      { id: 3, url: '/src/assets/DT2.jpg', caption: ''},
+      { id: 4, url: '/src/assets/DT3.jpg', caption: ''},
+      { id: 5, url: '/src/assets/DT4.jpg', caption: ''},
+      { id: 6, url: '/src/assets/DT5.jpg', caption: ''},
+      { id: 7, url: '/src/assets/DT6.jpg', caption: ''},
+      { id: 8, url: '/src/assets/DT7.jpg', caption: ''},
+      { id: 9, url: '/src/assets/DT8.jpg', caption: ''},
+      { id: 10, url: '/src/assets/DT9.jpg', caption: ''},
+      { id: 11, url: '/src/assets/DT10.jpeg', caption: ''},
+      { id: 12, url: '/src/assets/DT11.jpeg', caption: ''},
+      { id: 13, url: '/src/assets/DT12.jpeg', caption: ''},
+      { id: 15, url: '/src/assets/DT14.jpeg', caption: ''}
     ]
     },
     {
