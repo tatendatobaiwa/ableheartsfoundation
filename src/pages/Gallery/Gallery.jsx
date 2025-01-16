@@ -157,10 +157,13 @@ const Gallery = () => {
     {
       id: 10,
       title: 'First Ever Event',
-      coverImage: '/src/assets/first-ever-event-cover.jpg',
+      coverImage: '/src/assets/FE1.jpeg',
       description: 'The landmark event that marked the beginning of our journey in making a difference.',
       date: 'August 25, 2017',
-      images: []
+      images: [{ id: 1, url: '/src/assets/FE1.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 2, url: '/src/assets/FE2.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 3, url: '/src/assets/FE3.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 4, url: '/src/assets/FE4.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}]
     }
   ];
 
