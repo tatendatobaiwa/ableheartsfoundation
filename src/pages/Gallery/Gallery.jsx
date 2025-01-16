@@ -131,10 +131,17 @@ const Gallery = () => {
     {
       id: 8,
       title: 'Lephoi Able Hearts Garden and Fun Day',
-      coverImage: '/src/assets/lephoi-able-hearts-cover.jpg',
+      coverImage: '/src/assets/garden.jpg',
       description: 'A fun-filled day celebrating community spirit and sustainable gardening initiatives.',
       date: 'August 15, 2020',
-      images: []
+      images: [{ id: 1, url: '//src/assets/garden.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 2, url: '/src/assets/LG1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 3, url: '/src/assets/LG2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 4, url: '/src/assets/LG3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 5, url: '/src/assets/LG4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 6, url: '/src/assets/LG5.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 7, url: '/src/assets/LG6.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 8, url: '/src/assets/LG7.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}]
     },
     {
       id: 9,
