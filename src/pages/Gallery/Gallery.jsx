@@ -134,7 +134,7 @@ const Gallery = () => {
       coverImage: '/src/assets/garden.jpg',
       description: 'A fun-filled day celebrating community spirit and sustainable gardening initiatives.',
       date: 'August 15, 2020',
-      images: [{ id: 1, url: '//src/assets/garden.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      images: [{ id: 1, url: '/src/assets/garden.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
       { id: 2, url: '/src/assets/LG1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
       { id: 3, url: '/src/assets/LG2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
       { id: 4, url: '/src/assets/LG3.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
@@ -146,10 +146,13 @@ const Gallery = () => {
     {
       id: 9,
       title: 'News Articles',
-      coverImage: '/src/assets/news-articles-cover.jpg',
+      coverImage: '/src/assets/NP1.jpg',
       description: 'A collection of impactful news articles highlighting community achievements and milestones.',
       date: '',
-      images: []
+      images: [{ id: 1, url: '/src/assets/NP1.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 2, url: '/src/assets/NP2.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 3, url: '/src/assets/NP3.jpeg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'},
+      { id: 4, url: '/src/assets/NP4.jpg', caption: 'A picture-perfect day: The vibrant Lavender High Tea setup, blending charm and philanthropy'}]
     },
     {
       id: 10,
