@@ -248,25 +248,25 @@
   animation: float 20s infinite ease-in-out;
 }
 
-.blobs.blobs-1 {
+.blobs.blob-1 {
   top: 60%;
   left: -20%;
   animation-delay: 0s;
 }
 
-.blobs.blobs-2 {
+.blobs.blob-2 {
   top: 0%;
   right: -10%;
   animation-delay: 3s;
 }
 
-.blobs.blobs-3 {
+.blobs.blob-3 {
   bottom: 30%;
   left: -10%;
   animation-delay: 6s;
 }
 
-.blobs.blobs-4 {
+.blobs.blob-4 {
   bottom: -50%;
   right: 20%;
   animation-delay: 9s;

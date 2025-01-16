@@ -96,7 +96,7 @@ const Shop = () => {
             key={index}
             src={blob}
             alt={`Decorative blob ${index + 1}`}
-            className={`blobs blobs-${index + 1}`}
+            className={`blobs blob-${index + 1}`}
           />
         ))}
       </div>
