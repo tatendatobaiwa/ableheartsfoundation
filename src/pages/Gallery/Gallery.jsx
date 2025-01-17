@@ -11,6 +11,7 @@ const blobImages = [
 const Gallery = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedMedia, setSelectedMedia] = useState(null); 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -167,10 +168,36 @@ const Gallery = () => {
     }
   ];
 
-  const handleEventClick = (event) => {
-    setSelectedEvent(event);
-    setSelectedImage(null);
-  };
+  const individualMedia = [
+    {
+      id: 1,
+      type: 'image',
+      url: '/src/assets/IND1.jpg',
+      caption: 'Certificate of Appreciation from Lephoi Centre for the Blind.',
+      date: 'December 21, 2020',
+    },
+    {
+      id: 2,
+      type: 'video',
+      url: 'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fweb.facebook.com%2Fableheartsfoundation%2Fvideos%2F1023655192465414%2F&show_text=false&width=267&t=0',
+      caption: 'Kedia Primary School Visit.',
+      date: 'July 6, 2024',
+    },
+    {
+      id: 3,
+      type: 'video',
+      url: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Fableheartsfoundation%2Fvideos%2F627034052479114%2F&show_text=false&width=560&t=0',
+      caption: 'Donations Handover for Tsogang Trust.',
+      date: 'October 27, 2022',
+    },
+    {
+      id: 4,
+      type: 'video',
+      url: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Fableheartsfoundation%2Fvideos%2F929323177971101%2F&show_text=false&width=560&t=0',
+      caption: 'Mochudi Resource Center Visit.',
+      date: 'December 7, 2021',
+    }
+  ];
 
   const handleImageClick = (image) => {
     setSelectedImage(image);
@@ -183,6 +210,24 @@ const Gallery = () => {
   const closeImageModal = () => {
     setSelectedImage(null);
   };
+
+  // Event modal handler
+  const handleEventClick = (event) => {
+    setSelectedEvent(event);
+    setSelectedImage(null);
+    setSelectedMedia(null);
+  };
+
+  // Individual media modal handler
+  const handleMediaClick = (media) => {
+    setSelectedMedia(media);
+    setSelectedEvent(null);
+    setSelectedImage(null);
+  };
+
+  
+
+  const closeMediaModal = () => setSelectedMedia(null);
 
   return (
     <div className={`container-gallery ${isLoaded ? 'content-loaded' : ''}`}>
@@ -205,7 +250,7 @@ const Gallery = () => {
       </div>
 
       {/* Main Event Grid */}
-      <main className={`main-gallery pre-animate-gallery ${isLoaded ? 'fade-in-gallery' : ''}`}>
+      <div className={`main-gallery pre-animate-gallery ${isLoaded ? 'fade-in-gallery' : ''}`}>
         <div className="events-grid">
           {events.map((event) => (
             <div
@@ -225,8 +270,35 @@ const Gallery = () => {
             </div>
           ))}
         </div>
-      </main>
-
+         {/* Individual Media Section */}
+      <h2>Individual Media</h2>
+      <div className="individual-media-grid">
+        {individualMedia.map((media) => (
+          <div
+            key={media.id}
+            className="media-card"
+            onClick={() => handleMediaClick(media)}
+          >
+            {media.type === "image" ? (
+              <img src={media.url} alt={media.caption} className="media-image" />
+            ) : (
+              <iframe
+                src={media.url}
+                title={`Media ${media.id}`}
+                className="media-video"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            )}
+            <div className="media-card-overlay">
+              <p className="media-caption">{media.caption}</p>
+              <p className="media-date">{media.date}</p>
+            </div>
+          </div>
+          ))}
+        </div>
+      </div>
       {/* Event Modal with Sub-Gallery */}
       {selectedEvent && (
         <div className="modal-overlay-gallery" onClick={closeEventModal}>
@@ -237,7 +309,6 @@ const Gallery = () => {
             <button className="close-button-gallery" onClick={closeEventModal}>
               &times;
             </button>
-            
             <div className="event-modal-header">
               <h2 className="event-modal-title">{selectedEvent.title}</h2>
               <p className="event-modal-date">{selectedEvent.date}</p>
@@ -265,7 +336,6 @@ const Gallery = () => {
           </div>
         </div>
       )}
-
       {/* Individual Image Modal */}
       {selectedImage && (
         <div className="indmodal-overlay-gallery" onClick={closeImageModal}>
@@ -285,7 +355,39 @@ const Gallery = () => {
           </div>
         </div>
       )}
-
+      {/* Media Modal */}
+      {selectedMedia && (
+        <div className="modal-overlay-gallery" onClick={closeMediaModal}>
+          <div
+            className="modal-content-gallery"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="close-button-gallery"
+              onClick={closeMediaModal}
+            >
+              &times;
+            </button>
+            {selectedMedia.type === "image" ? (
+              <img
+                src={selectedMedia.url}
+                alt={selectedMedia.caption}
+                className="modal-media-image"
+              />
+            ) : (
+              <iframe
+                src={selectedMedia.url}
+                title="Selected Media"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allowFullScreen
+                className="modal-media-video"
+              />
+            )}
+            <p className="modal-media-caption">{selectedMedia.caption}</p>
+          </div>
+        </div>
+      )}
       {/* Scroll to Top Button */}
       {isScrolled && (
         <button 

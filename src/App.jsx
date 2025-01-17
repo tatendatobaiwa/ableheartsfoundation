@@ -12,6 +12,7 @@ import Home from "./pages/Home/Home.jsx";
 import Gallery from "./pages/Gallery/Gallery.jsx";
 import UBApp from "./pages/UBApp/UBApp.jsx";
 import BIUSTApp from "./pages/BIUSTApp/BIUSTApp.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy.jsx";
 import './App.css';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/ablehearts-ub" element={<UBApp />} />
         <Route path="/ablehearts-biust" element={<BIUSTApp />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </>
