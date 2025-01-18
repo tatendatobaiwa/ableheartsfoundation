@@ -109,25 +109,48 @@
 }
 
 .biust-app-success-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
+  position: fixed; /* Ensures the popup stays in view even when scrolling */
+  top: 50%; /* Centers the popup vertically */
+  left: 50%; /* Centers the popup horizontally */
+  transform: translate(-50%, -50%); /* Adjusts for the element's own dimensions */
+  z-index: 1000; /* Makes sure it's in front of other elements */
+  background-color: white; /* Popup background */
+  padding: 20px; /* Adds spacing inside the popup */
+  border-radius: 8px; /* Smooths the corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  text-align: center; /* Centers text inside */
 }
 
 .biust-app-success-close-button {
-  padding: 10px 20px;
   margin-top: 10px;
-  background-color: #2ecc71;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
   border: none;
   border-radius: 4px;
-  color: white;
   cursor: pointer;
+}
+
+.biust-app-success-close-button:hover {
+  background-color: #0056b3;
+}
+
+.biust-app-phone-input-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.biust-app-country-code-select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.biust-app-country-code-select:focus {
+  outline: none;
+  border-color: #007bff;
 }
 
 @media (max-width: 768px) {
