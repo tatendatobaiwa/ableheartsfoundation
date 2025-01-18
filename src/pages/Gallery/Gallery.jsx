@@ -48,7 +48,7 @@ const Gallery = () => {
       coverImage: '/src/assets/shakawe/shakawedono.jpg',
       description: 'A generous contribution aimed at enhancing the learning environment for students at Shakawe Junior Secondary School.',
       date: 'April 29, 2021',
-      images: [{ id: 1, url: '/src/assets/shakawedono.jpg', caption: 'Collaborative efforts: Volunteers working together to organize donations for Shakawe JSS.'},
+      images: [{ id: 1, url: '/src/assets/shakawe/shakawedono.jpg', caption: 'Collaborative efforts: Volunteers working together to organize donations for Shakawe JSS.'},
       { id: 2, url: '/src/assets/shakawe/S1.jpg', caption: 'Prepared with care: A set of new uniforms ready to bring smiles to students in need.'},
       { id: 3, url: '/src/assets/shakawe/S2.jpg', caption: 'Making a difference: Reception of donation boxes from Able Hearts.'}      
     ]

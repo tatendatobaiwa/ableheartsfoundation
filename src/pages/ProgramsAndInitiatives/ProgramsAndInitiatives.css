@@ -163,6 +163,9 @@
 }
 
 @media (max-width: 768px) {
+  .programs-container {
+    padding-top: 4rem;
+  }
   .program-content {
     flex-direction: column;
     align-items: center;

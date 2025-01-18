@@ -285,6 +285,7 @@
 @media (max-width: 768px) {
   .container-shop {
     padding: 1rem;
+    padding-top: 4rem;
   }
 
   .product-grid-shop {

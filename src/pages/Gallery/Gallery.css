@@ -561,6 +561,7 @@
   @media (max-width: 768px) {
     .container-gallery {
       padding: 1rem;
+      padding-top: 4rem;
     }
   
     .gallery-grid {

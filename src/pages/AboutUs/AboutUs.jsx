@@ -55,7 +55,45 @@ const AboutUs = () => {
       </div>
 
       <h1 className="about-title pre-animate">About Able Hearts Foundation</h1>
-      
+
+      <section className="about-section founder-section pre-animate">
+  <h2 className="section-title">Meet Our Founder</h2>
+  <div className="founder-content">
+    <div className="founder-image-container">
+      <img
+        src="/src/assets/thefounderphoto.jpg" // Replace with actual image path
+        alt="Founder of Able Hearts Foundation"
+        className="founder-image"
+      />
+      <div className="founder-badges">
+        <span>Miss Global Botswana 2021</span>
+        <span>Junior Miss Botswana 2nd Princess '16</span>
+        <span>Miss Teen Hope 1st Princess '17</span>
+      </div>
+    </div>
+    <div className="founder-details">
+      <h3 className="founder-name">Founder's Name</h3>
+      <p className="founder-description">
+        In Ms. Sakshi Bhargava is a visionary leader and passionate philanthropist, our founder has dedicated their life to making 
+        a positive impact in communities across Botswana. With a background in pageantry and a heart 
+        for service, she established the Able Hearts Foundation to create meaningful change in the 
+        lives of those who need it most.
+      </p>
+      <div className="founder-achievements">
+        <h4>Achievements & Roles</h4>
+        <ul>
+          <li>Founder of Able Hearts Foundation</li>
+          <li>Miss Global Botswana 2021</li>
+          <li>Junior Miss Botswana 2nd Princess '16</li>
+          <li>Miss Teen Hope 1st Princess '17</li>
+          <li>Brand Ambassador of Diamond Pageantry</li>
+          <li>Brand Ambassador of BushT. Fashions</li>
+          <li>Brand Ambassador of Em's Beauty Spa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
       <section className="about-section pre-animate">
         <h2 className="section-title">Our Vision</h2>
         <div className="section-content">

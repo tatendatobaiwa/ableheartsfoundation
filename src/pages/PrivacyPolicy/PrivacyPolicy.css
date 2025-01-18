@@ -79,7 +79,7 @@
 /* Inherit existing styles for animations, media queries, and other shared elements */
 @media (max-width: 768px) {
   .privacy-container {
-    padding: 1rem;
+    padding: 4rem 1rem;
   }
 
   .info-grid {

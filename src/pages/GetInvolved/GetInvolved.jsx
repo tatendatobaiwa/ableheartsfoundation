@@ -128,7 +128,7 @@ const GetInvolved = () => {
           </div>
           <div className="right-content">
             <img
-              src="/src/assets/biustvolunteers.JPG"
+              src="/src/assets/biustvolunteers.jpg"
               alt="AbleHearts BIUST"
               className="placeholder-image"
             />
@@ -157,7 +157,7 @@ const GetInvolved = () => {
           </div>
           <div className="right-content" style={{ padding : '0'}}>
             <img
-              src="/src/assets/partner.JPG"
+              src="/src/assets/partner.jpg"
               alt="Partnerships"
               className="placeholder-image"
               style={{ borderRadius: '0' }}
