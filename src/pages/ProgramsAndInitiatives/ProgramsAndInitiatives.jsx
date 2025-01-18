@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './ProgramsAndInitiatives.css';
 
 const blobImages = [
-  '/src/assets/blob1.png',
-  '/src/assets/blob3.png',
-  '/src/assets/blob4.png',
-  '/src/assets/blob2.png',
+  '/src/assets/icons/blob1.png',
+  '/src/assets/icons/blob3.png',
+  '/src/assets/icons/blob4.png',
+  '/src/assets/icons/blob2.png',
 ];
 
 const ProgramsAndInitiatives = () => {
@@ -67,7 +67,7 @@ const ProgramsAndInitiatives = () => {
         <div className="program-content">
           <img
             className="program-image"
-            src="/src/assets/garden.jpg"
+            src="/src/assets/lephoi/garden.jpg"
             alt="Able Hearts Garden"
           />
           <p className="program-description">
@@ -84,7 +84,7 @@ const ProgramsAndInitiatives = () => {
           </p>
           <img
             className="program-image"
-            src="/src/assets/talentshow.jpeg"
+            src="/src/assets/dynamictalent/talentshow.jpeg"
             alt="Dynamic Talent Show"
           />
         </div>
@@ -95,7 +95,7 @@ const ProgramsAndInitiatives = () => {
         <div className="program-content">
           <img
             className="program-image"
-            src="/src/assets/mochud.jpg"
+            src="/src/assets/mochudi/mochud.jpg"
             alt="Mochudi Resource Center Visits"
           />
           <p className="program-description">
@@ -112,7 +112,7 @@ const ProgramsAndInitiatives = () => {
           </p>
           <img
             className="program-image"
-            src="/src/assets/tsogangtrust.jpg"
+            src="/src/assets/tsogangtrust/tsogangtrust.jpg"
             alt="Tsogang Trust Support"
           />
         </div>
@@ -123,7 +123,7 @@ const ProgramsAndInitiatives = () => {
         <div className="program-content">
           <img
             className="program-image"
-            src="/src/assets/covid.jpg"
+            src="/src/assets/covid/covid.jpg"
             alt="COVID-19 Food Hampers"
           />
           <p className="program-description">
@@ -140,7 +140,7 @@ const ProgramsAndInitiatives = () => {
           </p>
           <img
             className="program-image"
-            src="/src/assets/lavender.jpg"
+            src="/src/assets/lavender/lavender.jpg"
             alt="Lavender High Tea"
           />
         </div>
@@ -151,7 +151,7 @@ const ProgramsAndInitiatives = () => {
         <div className="program-content">
           <img
             className="program-image"
-            src="/src/assets/kedia.jpeg"
+            src="/src/assets/kedia/kedia.jpeg"
             alt="School Donations"
           />
           <p className="program-description">
@@ -159,7 +159,7 @@ const ProgramsAndInitiatives = () => {
           </p>
           <img
             className="program-image"
-            src="/src/assets/shakawedono.jpg"
+            src="/src/assets/shakawe/shakawedono.jpg"
             alt="Shakawe JSS Donations"
           />
         </div>

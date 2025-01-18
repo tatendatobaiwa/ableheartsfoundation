@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './AboutUs.css';
 
 const blobImages = [
-  '/src/assets/blob1.png',
-  '/src/assets/blob3.png',
-  '/src/assets/blob4.png',
-  '/src/assets/blob2.png',
+  '/src/assets/icons/blob1.png',
+  '/src/assets/icons/blob3.png',
+  '/src/assets/icons/blob4.png',
+  '/src/assets/icons/blob2.png',
 ];
 
 const AboutUs = () => {
@@ -78,7 +78,7 @@ const AboutUs = () => {
         <h2 className="section-title">Our Journey</h2>
         <div className="section-content">
           <p className="section-description">
-            Founded in 2018, Able Hearts Foundation began with a simple yet powerful vision of making a difference in the lives of children with disabilities. What started as small community initiatives has grown into a comprehensive foundation that serves various marginalized groups across Botswana.
+            Founded in 2017, Able Hearts Foundation began with a simple yet powerful vision of making a difference in the lives of children with disabilities. What started as small community initiatives has grown into a comprehensive foundation that serves various marginalized groups across Botswana.
           </p>
         </div>
       </section>
@@ -95,7 +95,7 @@ const AboutUs = () => {
             <p>Active Programs</p>
           </div>
           <div className="impact-card">
-            <h3>5</h3>
+            <h3>8</h3>
             <p>Years of Service</p>
           </div>
         </div>

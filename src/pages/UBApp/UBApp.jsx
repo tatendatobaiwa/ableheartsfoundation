@@ -5,10 +5,10 @@ import emailjs from 'emailjs-com';
 import './UBApp.css';
 
 const blobImages = [
-  '/src/assets/blob1.png',
-  '/src/assets/blob3.png',
-  '/src/assets/blob4.png',
-  '/src/assets/blob2.png',
+  '/src/assets/icons/blob1.png',
+  '/src/assets/icons/blob3.png',
+  '/src/assets/icons/blob4.png',
+  '/src/assets/icons/blob2.png',
 ];
 
 const UBApp = () => {
@@ -86,7 +86,7 @@ const UBApp = () => {
       </div>
       <div className="ub-app-container">
         <div className="ub-app-logo-container">
-          <img src="/src/assets/ub.png" alt="ub Logo" className="ub-app-logo" />
+          <img src="/src/assets/icons/ub.png" alt="ub Logo" className="ub-app-logo" />
         </div>
 
         <h1 className="ub-app-title">UB Application Form</h1>

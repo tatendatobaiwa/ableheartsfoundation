@@ -3,10 +3,10 @@ import emailjs from 'emailjs-com';
 import './Shop.css';
 
 const blobImages = [
-  '/src/assets/blob1.png',
-  '/src/assets/blob3.png',
-  '/src/assets/blob4.png',
-  '/src/assets/blob2.png',
+  '/src/assets/icons/blob1.png',
+  '/src/assets/icons/blob3.png',
+  '/src/assets/icons/blob4.png',
+  '/src/assets/icons/blob2.png',
 ];
 
 const Shop = () => {
@@ -72,19 +72,19 @@ const Shop = () => {
       id: 1,
       name: 'Classic White T-Shirt',
       price: 20.0,
-      images: ['/src/assets/whiteTfront.jpg', '/src/assets/whiteTback.jpg'],
+      images: ['/src/assets/merch/whiteTfront.jpg', '/src/assets/merch/whiteTback.jpg'],
     },
     {
       id: 2,
       name: '"EQUALITY" White Sports Jersey',
       price: 25.0,
-      images: ['/src/assets/whitejersey1.JPG', '/src/assets/whitejersey2.JPG'],
+      images: ['/src/assets/merch/whitejersey1.JPG', '/src/assets/merch/whitejersey2.JPG'],
     },
     {
       id: 3,
       name: '"EQUALITY" Black Sports Jersey',
       price: 30.0,
-      images: ['/src/assets/blackjerseyfront.jpg', '/src/assets/blackjerseyback.jpg'],
+      images: ['/src/assets/merch/blackjerseyfront.jpg', '/src/assets/merch/blackjerseyback.jpg'],
     },
   ];
 

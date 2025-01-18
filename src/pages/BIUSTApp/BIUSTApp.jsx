@@ -5,10 +5,10 @@ import emailjs from 'emailjs-com';
 import './BIUSTApp.css';
 
 const blobImages = [
-  '/src/assets/blob1.png',
-  '/src/assets/blob3.png',
-  '/src/assets/blob4.png',
-  '/src/assets/blob2.png',
+  '/src/assets/icons/blob1.png',
+  '/src/assets/icons/blob3.png',
+  '/src/assets/icons/blob4.png',
+  '/src/assets/icons/blob2.png',
 ];
 
 const BIUSTApp = () => {
@@ -86,7 +86,7 @@ const BIUSTApp = () => {
       </div>
       <div className="biust-app-container">
         <div className="biust-app-logo-container">
-          <img src="/src/assets/biust.jpg" alt="BIUST Logo" className="biust-app-logo" />
+          <img src="/src/assets/icons/biust.jpg" alt="BIUST Logo" className="biust-app-logo" />
         </div>
 
         <h1 className="biust-app-title">BIUST Application Form</h1>

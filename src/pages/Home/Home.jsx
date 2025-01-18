@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
 const landingPageImage = new URL('/src/assets/landingpageimage.jpg', import.meta.url).href;
-const whiteLogo = new URL('/src/assets/whiteablehearts.png', import.meta.url).href;
+const whiteLogo = new URL('/src/assets/icons/whiteablehearts.png', import.meta.url).href;
 
 const Home = () => {
 const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,26 +13,26 @@ const [loadedImages, setLoadedImages] = useState({});
   
 const imageLoaders = {
       landingPageImage: () => import('/src/assets/landingpageimage.jpg').then(m => m.default),
-      lephoi: () => import('/src/assets/carousel1lephoi.jpg').then(m => m.default),
-      kedia: () => import('/src/assets/carousel2kedia.jpeg').then(m => m.default),
-      tsogang: () => import('/src/assets/carousel3tsogang.jpg').then(m => m.default),
-      mochudi: () => import('/src/assets/carousel4mochudi.jpg').then(m => m.default),
-      blob2: () => import('/src/assets/blob2.png').then(m => m.default),
-      blob3: () => import('/src/assets/blob3.png').then(m => m.default),
-      blob4: () => import('/src/assets/blob4.png').then(m => m.default),
-      newsletter: () => import('/src/assets/newsletterimage.png').then(m => m.default),
-      scribble: () => import('/src/assets/scribblebackground.png').then(m => m.default),
-      india: () => import('/src/assets/india.png').then(m => m.default),
-      minjex: () => import('/src/assets/minjex.png').then(m => m.default),
-      nortex: () => import('/src/assets/nortex.png').then(m => m.default),
-      trans: () => import('/src/assets/trans.png').then(m => m.default),
-      tropicana: () => import('/src/assets/tropicana.png').then(m => m.default),
-      sennfoods: () => import('/src/assets/sennfoods.webp').then(m => m.default),
-      francistownelectronics: () => import('/src/assets/francistownelectronics.png').then(m => m.default),
-      valentines: () => import('/src/assets/valentinessports.png').then(m => m.default),
-      bush: () => import('/src/assets/busht.png').then(m => m.default),
-      strub: () => import('/src/assets/strub.png').then(m => m.default),
-      bms: () => import('/src/assets/bms.png').then(m => m.default),
+      lephoi: () => import('/src/assets/lephoi/carousel1lephoi.jpg').then(m => m.default),
+      kedia: () => import('/src/assets/kedia/carousel2kedia.jpeg').then(m => m.default),
+      tsogang: () => import('/src/assets/tsogangtrust/carousel3tsogang.jpg').then(m => m.default),
+      mochudi: () => import('/src/assets/mochudi/carousel4mochudi.jpg').then(m => m.default),
+      blob2: () => import('/src/assets/icons/blob2.png').then(m => m.default),
+      blob3: () => import('/src/assets/icons/blob3.png').then(m => m.default),
+      blob4: () => import('/src/assets/icons/blob4.png').then(m => m.default),
+      newsletter: () => import('/src/assets/newspaper/newsletterimage.png').then(m => m.default),
+      scribble: () => import('/src/assets/icons/scribblebackground.png').then(m => m.default),
+      india: () => import('/src/assets/icons/india.png').then(m => m.default),
+      minjex: () => import('/src/assets/icons/minjex.png').then(m => m.default),
+      nortex: () => import('/src/assets/icons/nortex.png').then(m => m.default),
+      trans: () => import('/src/assets/icons/trans.png').then(m => m.default),
+      tropicana: () => import('/src/assets/icons/tropicana.png').then(m => m.default),
+      sennfoods: () => import('/src/assets/icons/sennfoods.webp').then(m => m.default),
+      francistownelectronics: () => import('/src/assets/icons/francistownelectronics.png').then(m => m.default),
+      valentines: () => import('/src/assets/icons/valentinessports.png').then(m => m.default),
+      bush: () => import('/src/assets/icons/busht.png').then(m => m.default),
+      strub: () => import('/src/assets/icons/strub.png').then(m => m.default),
+      bms: () => import('/src/assets/icons/bms.png').then(m => m.default),
     };
 
     const slides = [
