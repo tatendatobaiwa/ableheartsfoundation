@@ -359,9 +359,9 @@ const Gallery = () => {
       {selectedMedia && (
         <div className="modal-overlay-gallery" onClick={closeMediaModal}>
           <div
-            className="modal-content-gallery"
-            onClick={(e) => e.stopPropagation()}
-          >
+              className={`modal-content-gallery ${selectedMedia?.type === 'video' ? 'video-modal' : ''}`}
+              onClick={(e) => e.stopPropagation()}
+            >
             <button
               className="close-button-gallery"
               onClick={closeMediaModal}
