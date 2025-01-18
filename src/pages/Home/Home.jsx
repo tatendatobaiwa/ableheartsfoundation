@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
+import NewsletterSignup from '/src/components/NewsLetterSignup.jsx';  
 
 const landingPageImage = new URL('/src/assets/landingpageimage.jpg', import.meta.url).href;
 const whiteLogo = new URL('/src/assets/icons/whiteablehearts.png', import.meta.url).href;
@@ -234,23 +235,7 @@ const imageLoaders = {
             loading="lazy"
           />
         </div>
-        <div className="newsletter-text">
-          <h3>Stay Updated!</h3>
-          <p>
-            Sign up for our newsletter to receive the latest news and updates directly to your inbox.
-          </p>
-          <form className="newsletter-form">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="newsletter-input"
-              required
-            />
-            <button type="submit" className="newsletter-button">
-              Subscribe
-            </button>
-          </form>
-        </div>
+        <NewsletterSignup />
         <div className="newsletter-image">
           <img 
             src={getImageUrl('newsletter')} 
