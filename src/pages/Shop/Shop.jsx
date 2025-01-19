@@ -22,6 +22,10 @@ const Shop = () => {
   const [selectedSize, setSelectedSize] = useState('M');
   const [quantity, setQuantity] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [contactDetails, setContactDetails] = useState({
+    email: '',
+    phone: ''
+  });
 
   useEffect(() => {
     setIsLoaded(true);
@@ -82,7 +86,7 @@ const Shop = () => {
   };
 
   const handleSubmitOrder = async () => {
-    if (cart.length === 0 || isSubmitting) return;
+    if (cart.length === 0 || isSubmitting || !contactDetails.email || !contactDetails.phone) return;
 
     try {
       setIsSubmitting(true);
@@ -96,6 +100,7 @@ const Shop = () => {
           quantity: item.quantity,
         })),
         totalAmount: getTotalPrice(),
+        contact: contactDetails,
         status: 'pending',
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp()
@@ -176,7 +181,7 @@ const Shop = () => {
         <div className="modal-overlay-shop" onClick={closeModal}>
           <div className="modal-content-shop" onClick={(e) => e.stopPropagation()}>
             <button className="close-button-shop" onClick={closeModal}>
-              <X />
+              <X size={24} />
             </button>
             <div className="modal-head-shop">
               <div className="modal-images">
@@ -210,7 +215,7 @@ const Shop = () => {
               <div className="quantity-selector">
                 <p className="text-sm mb-2">Quantity:</p>
                 <div className="flex items-center justify-center gap-4">
-                <button 
+                  <button 
                     className="quantity-btn"
                     onClick={() => setQuantity(quantity + 1)}
                   >
@@ -246,7 +251,7 @@ const Shop = () => {
       <div className={`mini-cart ${isCartOpen ? 'open' : ''}`}>
         <div className="mini-cart-header">
           <h3>Your Cart</h3>
-          <button onClick={() => setIsCartOpen(false)}><X size={20} /></button>
+          <button className="close-button-shop2" onClick={() => setIsCartOpen(false)}><X size={20} /></button>
         </div>
         
         <div className="mini-cart-items">
@@ -268,6 +273,26 @@ const Shop = () => {
               </button>
             </div>
           ))}
+        </div>
+
+        {/* Contact Details Input */}
+        <div className="contact-details">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={contactDetails.email}
+            onChange={(e) => setContactDetails({ ...contactDetails, email: e.target.value })}
+            placeholder="Enter your email"
+          />
+          <label htmlFor="phone">Phone:</label>
+          <input
+            type="tel"
+            id="phone"
+            value={contactDetails.phone}
+            onChange={(e) => setContactDetails({ ...contactDetails, phone: e.target.value })}
+            placeholder="Enter your phone number"
+          />
         </div>
 
         {cart.length > 0 ? (
