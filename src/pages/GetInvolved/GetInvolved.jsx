@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import scribble from '/src/assets/icons/scribblebackground.png';
+import DonationForm from '/src/components/DonationForm.jsx';  
+
 import './GetInvolved.css';
 
 const blobImages = [
@@ -67,9 +69,7 @@ const GetInvolved = () => {
           <p>
             Join us in making a difference. Volunteer, donate, or partner with us to create meaningful change.
           </p>
-          <div className="buttons-container">
-            <button className="cta-button">Donate Now</button>
-          </div>
+          <DonationForm />
         </div>
         <div className="right-content">
           <div className="video-placeholder">
