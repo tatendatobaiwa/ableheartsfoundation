@@ -61,7 +61,7 @@ const AboutUs = () => {
   <div className="founder-content">
     <div className="founder-image-container">
       <img
-        src="/src/assets/thefounderphoto.jpg" // Replace with actual image path
+        src="/src/assets/thefounderphoto.jpg" 
         alt="Founder of Able Hearts Foundation"
         className="founder-image"
       />
@@ -72,7 +72,7 @@ const AboutUs = () => {
       </div>
     </div>
     <div className="founder-details">
-      <h3 className="founder-name">Founder's Name</h3>
+      <h3 className="founder-name">Sakshi Bhargava</h3>
       <p className="founder-description">
         In Ms. Sakshi Bhargava is a visionary leader and passionate philanthropist, our founder has dedicated their life to making 
         a positive impact in communities across Botswana. With a background in pageantry and a heart 

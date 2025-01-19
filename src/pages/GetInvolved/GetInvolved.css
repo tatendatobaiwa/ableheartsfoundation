@@ -146,6 +146,14 @@
     margin-bottom: 1rem;
     font-size: 3rem;
   }
+
+  .left-content h2 {
+    font-family: Poppins, "sans-serif";
+    font-weight: 600;
+    color: #043F70;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
   
   .left-content p {
     font-family: Poppins, "sans-serif";
@@ -153,6 +161,7 @@
     color: #043F70;
     font-size: large;
     margin-bottom: 3rem;
+    font-size: 1.2rem;
   }
   
   .buttons-container {
@@ -179,11 +188,13 @@
   
   /* Right Content */
   .right-content {
-    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 4rem;
+    display: flex;
+    width: 31%;
+    z-index: 1;
   }
   
   .video-placeholder iframe {
@@ -213,30 +224,34 @@
     z-index: 1;
     gap: 2rem;
   }
+  .left-contentP {
+    width: 50%;
+    padding: 0 2rem;
+    text-align: left;
+  }
 
-.left-content h2 {
-  font-family: Poppins, "sans-serif";
-  font-weight: 600;
-  color: #043F70;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
+  .left-contentP h1 {
+    font-family: Poppins, "sans-serif";
+    font-weight: 600;
+    color: #043F70;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  }
 
-.left-content p {
-  font-family: Poppins, "sans-serif";
-  line-height: 1.6;
-  color: #043F70;
-  font-size: 1.2rem;
-}
+  .left-contentP h2 {
+    font-family: Poppins, "sans-serif";
+    font-weight: 600;
+    color: #043F70;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
 
-.right-content {
-  width: 31%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-
-}
+  .left-contentP p {
+    font-family: Poppins, "sans-serif";
+    line-height: 1.6;
+    color: #043F70;
+    font-size: 1.2rem;
+  }
 
 .placeholder-image {
   width: 100%;
@@ -320,8 +335,10 @@
   .placeholder-image {
     width: 100%;
   }
+  .left-contentP {
+    width: 100%;  }
 
-  .left-content h2, p {
+  .left-contentP h2, p {
     padding: 0 2rem;
   }
 

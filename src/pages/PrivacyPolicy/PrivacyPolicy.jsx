@@ -74,7 +74,7 @@ const PrivacyPolicy = () => {
               <img src={blobImages[1]} alt="Academic Info Blob" className="info-card-blob" />
               <div className="info-card-content">
                 <h3>Academic Information</h3>
-                <p>University affiliation, course of study, and year level</p>
+                <p>University affiliation</p>
               </div>
             </div>
           </div>

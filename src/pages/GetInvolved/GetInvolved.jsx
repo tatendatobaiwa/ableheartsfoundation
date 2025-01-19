@@ -140,7 +140,7 @@ const GetInvolved = () => {
           <div className="contour-overlay">
             <img src={scribble} alt="Scribblebackground" style={{ height: '80rem' }} />
           </div>
-          <div className="left-content">
+          <div className="left-contentP">
             <h2 style={{ color: 'white' }}>Partnerships</h2>
             <p style={{ color: 'white' }}>
               Partner with us to amplify our efforts. Together, we can create impactful initiatives that empower
