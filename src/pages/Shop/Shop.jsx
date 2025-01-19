@@ -86,11 +86,25 @@ const Shop = () => {
   };
 
   const handleSubmitOrder = async () => {
-    if (cart.length === 0 || isSubmitting || !contactDetails.email || !contactDetails.phone) return;
-
+    if (cart.length === 0 || isSubmitting) return;
+  
+    // Validate email
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!contactDetails.email || !emailRegex.test(contactDetails.email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+  
+    // Validate phone number
+    const phoneRegex = /^(?:\+267)?[0-9]{8}$/;
+    if (!contactDetails.phone || !phoneRegex.test(contactDetails.phone)) {
+      alert('Please enter a valid phone number.');
+      return;
+    }
+  
     try {
       setIsSubmitting(true);
-
+  
       const orderData = {
         items: cart.map(item => ({
           productId: item.productId,
@@ -103,22 +117,23 @@ const Shop = () => {
         contact: contactDetails,
         status: 'pending',
         createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp()
+        updatedAt: serverTimestamp(),
       };
-
+  
       // Add order to Firestore
       const docRef = await addDoc(collection(db, 'orders'), orderData);
-      
-      alert(`Order placed successfully! Order ID: ${docRef.id}`);
-      setCart([]);
-      setIsCartOpen(false);
+  
+      // Show custom success modal
+      setSuccessModal(true);
+      setCart([]);  // Clear the cart
+      setIsCartOpen(false);  // Close the cart
     } catch (error) {
       console.error('Error submitting order:', error);
       alert('Failed to place order. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
-  };
+  };  
 
   const openModal = (product) => {
     setSelectedProduct(product);
@@ -137,6 +152,9 @@ const Shop = () => {
   const closeEnlargedImage = () => {
     setEnlargedImage(null);
   };
+
+  const [successModal, setSuccessModal] = useState(false);
+
 
   return (
     <div className={`container-shop ${isLoaded ? 'content-loaded' : ''}`}>
@@ -310,7 +328,7 @@ const Shop = () => {
           <p className="empty-cart-message">Your cart is empty</p>
         )}
       </div>
-
+      
       {/* Cart Toggle Button */}
       <button 
         className="cart-toggle-btn"
@@ -328,7 +346,15 @@ const Shop = () => {
           <img src={enlargedImage} alt="Enlarged" className="enlarged-image" />
         </div>
       )}
-
+        {successModal && (
+          <div className="success-modal-overlay">
+            <div className="success-modal">
+              <h3>Order Placed Successfully!</h3>
+              <p>Your pre-order has been successfully placed. We will update you regarding the progress of you Order!</p>
+              <button onClick={() => setSuccessModal(false)}>Close</button>
+            </div>
+          </div>
+        )}
       {/* Scroll to Top Button */}
       {isScrolled && (
         <button 

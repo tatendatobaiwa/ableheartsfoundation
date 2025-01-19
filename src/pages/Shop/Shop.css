@@ -517,7 +517,6 @@
 }
 
 .contact-details label {
-
   font-size: 14px;
   color: #043F70;
 }
@@ -528,6 +527,52 @@
     right: -100%;
   }
 }
+
+.success-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.success-modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+}
+
+.success-modal h3 {
+  color: #007bff; /* Green color for success */
+  font-size: 1.5em;
+}
+
+.success-modal p {
+  margin: 10px 0;
+  color: #333;
+}
+
+.success-modal button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.success-modal button:hover {
+  background-color: #043F70;
+}
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
