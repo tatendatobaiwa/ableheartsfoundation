@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingCart, X, Plus, Minus } from 'lucide-react';
-import { db } from '/src/firebase/config.js';
+import { db } from '/src/firebase/config';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import './Shop.css';
+
 const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+const blobImages = [
+  '/src/assets/icons/blob1.png',
+  '/src/assets/icons/blob3.png',
+  '/src/assets/icons/blob4.png',
+  '/src/assets/icons/blob2.png',
+];
 
 const Shop = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -127,7 +135,23 @@ const Shop = () => {
 
   return (
     <div className={`container-shop ${isLoaded ? 'content-loaded' : ''}`}>
-      <main className={`main-shop pre-animate ${isLoaded ? 'fade-in' : ''}`}>
+      <div className="background-blobs">
+        {blobImages.map((blob, index) => (
+          <img
+            key={index}
+            src={blob}
+            alt={`Decorative blob ${index + 1}`}
+            className={`blobs blob-${index + 1}`}
+          />
+        ))}
+      </div>
+      <div className={`shophead pre-animate ${isLoaded ? 'fade-in' : ''}`}>
+        <h1 className="title-shop">Shop with a Purpose</h1>
+        <p className="subtitle-shop">
+          Support our mission by purchasing items from our shop. Every purchase helps fund our initiatives.
+        </p>
+      </div>
+      <div className={`main-shop pre-animate ${isLoaded ? 'fade-in' : ''}`}>
         <div className="product-grid-shop">
           {products.map((product) => (
             <div
@@ -145,7 +169,7 @@ const Shop = () => {
             </div>
           ))}
         </div>
-      </main>
+      </div>
 
       {/* Product Modal */}
       {selectedProduct && (
@@ -183,26 +207,33 @@ const Shop = () => {
                   ))}
                 </div>
               </div>
-
               <div className="quantity-selector">
                 <p className="text-sm mb-2">Quantity:</p>
                 <div className="flex items-center justify-center gap-4">
+                <button 
+                    className="quantity-btn"
+                    onClick={() => setQuantity(quantity + 1)}
+                  >
+                    <Plus size={16} />
+                  </button>
+                  <input
+                    type="number"
+                    min="1"
+                    className="quantity-input"
+                    value={quantity}
+                    onChange={(e) => {
+                      const value = Math.max(1, parseInt(e.target.value) || 1);
+                      setQuantity(value);
+                    }}
+                  />
                   <button 
                     className="quantity-btn"
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   >
                     <Minus size={16} />
                   </button>
-                  <span className="text-lg font-semibold">{quantity}</span>
-                  <button 
-                    className="quantity-btn"
-                    onClick={() => setQuantity(quantity + 1)}
-                  >
-                    <Plus size={16} />
-                  </button>
                 </div>
               </div>
-
               <button className="add-to-cart-button" onClick={addToCart}>
                 Add to Cart
               </button>
