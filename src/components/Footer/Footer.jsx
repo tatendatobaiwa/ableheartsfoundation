@@ -71,16 +71,7 @@ const Footer = () => {
               <ul className="social-icons">
                 <li>
                   <a
-                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src={linkedinIcon} alt="LinkedIn logo" height="30" width="30" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+                    href="https://web.facebook.com/ableheartsfoundation/?_rdc=1&_rdr#"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -89,7 +80,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+                    href="https://www.instagram.com/ableheartsfoundation/?hl=en"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -98,11 +89,11 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+                    href="https://wa.me/26771422300                   "
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={whatsapplogo} alt="LinkedIn logo" height="30" width="30" />
+                    <img src={whatsapplogo} alt="Whatsapp logo" height="30" width="30" />
                   </a>
                 </li>
               </ul>
