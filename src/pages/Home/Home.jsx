@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import NewsletterSignup from '/src/components/NewsLetterSignup.jsx';  
 
-const landingPageImage = new URL('/src/assets/landingpageimage.jpg', import.meta.url).href;
-const whiteLogo = new URL('/src/assets/icons/whiteablehearts.png', import.meta.url).href;
+const landingPageImage = new URL('/src/assets/optimized/landingpageimage.webp', import.meta.url).href;
+const whiteLogo = new URL('/src/assets/optimized/icons/whiteablehearts.webp', import.meta.url).href;
 
 const Home = () => {
 const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,27 +13,27 @@ const navigate = useNavigate();
 const [loadedImages, setLoadedImages] = useState({});
   
 const imageLoaders = {
-      landingPageImage: () => import('/src/assets/landingpageimage.jpg').then(m => m.default),
-      lephoi: () => import('/src/assets/lephoi/carousel1lephoi.jpg').then(m => m.default),
-      kedia: () => import('/src/assets/kedia/carousel2kedia.jpeg').then(m => m.default),
-      tsogang: () => import('/src/assets/tsogangtrust/carousel3tsogang.jpg').then(m => m.default),
-      mochudi: () => import('/src/assets/mochudi/carousel4mochudi.jpg').then(m => m.default),
-      blob2: () => import('/src/assets/icons/blob2.png').then(m => m.default),
-      blob3: () => import('/src/assets/icons/blob3.png').then(m => m.default),
-      blob4: () => import('/src/assets/icons/blob4.png').then(m => m.default),
-      newsletter: () => import('/src/assets/newspaper/newsletterimage.png').then(m => m.default),
-      scribble: () => import('/src/assets/icons/scribblebackground.png').then(m => m.default),
-      india: () => import('/src/assets/icons/india.png').then(m => m.default),
-      minjex: () => import('/src/assets/icons/minjex.png').then(m => m.default),
-      nortex: () => import('/src/assets/icons/nortex.png').then(m => m.default),
-      trans: () => import('/src/assets/icons/trans.png').then(m => m.default),
-      tropicana: () => import('/src/assets/icons/tropicana.png').then(m => m.default),
-      sennfoods: () => import('/src/assets/icons/sennfoods.webp').then(m => m.default),
-      francistownelectronics: () => import('/src/assets/icons/francistownelectronics.png').then(m => m.default),
-      valentines: () => import('/src/assets/icons/valentinessports.png').then(m => m.default),
-      bush: () => import('/src/assets/icons/busht.png').then(m => m.default),
-      strub: () => import('/src/assets/icons/strub.png').then(m => m.default),
-      bms: () => import('/src/assets/icons/bms.png').then(m => m.default),
+      landingPageImage: () => import('/src/assets/optimized/landingpageimage.webp').then(m => m.default),
+      lephoi: () => import('/src/assets/optimized/lephoi/carousel1lephoi.webp').then(m => m.default),
+      kedia: () => import('/src/assets/optimized/kedia/carousel2kedia.webp').then(m => m.default),
+      tsogang: () => import('/src/assets/optimized/tsogangtrust/carousel3tsogang.webp').then(m => m.default),
+      mochudi: () => import('/src/assets/optimized/mochudi/carousel4mochudi.webp').then(m => m.default),
+      blob2: () => import('/src/assets/optimized/icons/blob2.webp').then(m => m.default),
+      blob3: () => import('/src/assets/optimized/icons/blob3.webp').then(m => m.default),
+      blob4: () => import('/src/assets/optimized/icons/blob4.webp').then(m => m.default),
+      newsletter: () => import('/src/assets/optimized/newspaper/newsletterimage.webp').then(m => m.default),
+      scribble: () => import('/src/assets/optimized/icons/scribblebackground.webp').then(m => m.default),
+      india: () => import('/src/assets/optimized/icons/india.webp').then(m => m.default),
+      minjex: () => import('/src/assets/optimized/icons/minjex.webp').then(m => m.default),
+      nortex: () => import('/src/assets/optimized/icons/nortex.webp').then(m => m.default),
+      trans: () => import('/src/assets/optimized/icons/trans.webp').then(m => m.default),
+      tropicana: () => import('/src/assets/optimized/icons/tropicana.webp').then(m => m.default),
+      sennfoods: () => import('/src/assets/optimized/icons/sennfoods.webp').then(m => m.default),
+      francistownelectronics: () => import('/src/assets/optimized/icons/francistownelectronics.webp').then(m => m.default),
+      valentines: () => import('/src/assets/optimized/icons/valentinessports.webp').then(m => m.default),
+      bush: () => import('/src/assets/optimized/icons/busht.webp').then(m => m.default),
+      strub: () => import('/src/assets/optimized/icons/strub.webp').then(m => m.default),
+      bms: () => import('/src/assets/optimized/icons/bms.webp').then(m => m.default),
     };
 
     const slides = [

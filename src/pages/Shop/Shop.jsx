@@ -6,10 +6,10 @@ import './Shop.css';
 
 const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 const blobImages = [
-  '/src/assets/icons/blob1.png',
-  '/src/assets/icons/blob3.png',
-  '/src/assets/icons/blob4.png',
-  '/src/assets/icons/blob2.png',
+  '/src/assets/optimized/icons/blob1.webp',
+  '/src/assets/optimized/icons/blob3.webp',
+  '/src/assets/optimized/icons/blob4.webp',
+  '/src/assets/optimized/icons/blob2.webp',
 ];
 
 const Shop = () => {
@@ -41,19 +41,19 @@ const Shop = () => {
       id: 1,
       name: 'Classic White T-Shirt',
       price: 20.0,
-      images: ['/src/assets/merch/whiteTfront.jpg', '/src/assets/merch/whiteTback.jpg'],
+      images: ['/src/assets/optimized/merch/whiteTfront.webp', '/src/assets/optimized/merch/whiteTback.webp'],
     },
     {
       id: 2,
       name: '"EQUALITY" White Sports Jersey',
       price: 25.0,
-      images: ['/src/assets/merch/whitejersey1.jpg', '/src/assets/merch/whitejersey2.jpg'],
+      images: ['/src/assets/optimized/merch/whitejersey1.webp', '/src/assets/optimized/merch/whitejersey2.webp'],
     },
     {
       id: 3,
       name: '"EQUALITY" Black Sports Jersey',
       price: 30.0,
-      images: ['/src/assets/merch/blackjerseyfront.jpg', '/src/assets/merch/blackjerseyback.jpg'],
+      images: ['/src/assets/optimized/merch/blackjerseyfront.webp', '/src/assets/optimized/merch/blackjerseyback.webp'],
     },
   ];
 
