@@ -47,25 +47,25 @@ const imageLoaders = {
         image: 'lephoi',
         logo: whiteLogo,
         title: 'Lephoi Centre for the Visually Impaired',
-        date: '2020',
+        date: 'August 15, 2020',
       },
       {
         image: 'kedia',
         logo: whiteLogo,
         title: 'Kedia Primary School',
-        date: '2024',
+        date: 'July 6, 2024',
       },
       {
         image: 'tsogang',
         logo: whiteLogo,
         title: 'Tsogang Trust',
-        date: '2022',
+        date: 'October 27, 2022',
       },
       {
         image: 'mochudi',
         logo: whiteLogo,
         title: 'Mochudi Resource Center',
-        date: '2021',
+        date: 'April 22, 2021',
       },
     ];
 

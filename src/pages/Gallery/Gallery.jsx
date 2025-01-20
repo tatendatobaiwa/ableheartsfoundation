@@ -112,7 +112,7 @@ const Gallery = () => {
       title: 'Mochudi Resource Center',
       coverImage: '/src/assets/fixed/mochudi/mochud.webp',
       description: 'An initiative to equip the Mochudi Resource Center with vital resources to foster community engagement.',
-      date: 'April 22, 2021 ',
+      date: 'April 22, 2021',
       images: [{ id: 1, url: '/src/assets/fixed/mochudi/mochud.webp', caption: 'A moment of impact: The Able Hearts team delivering essential supplies to the Mochudi Resource Center, strengthening support for the community.'},
       { id: 2, url: '/src/assets/fixed/mochudi/M1.webp', caption: 'A touch of kindness: Ms. Sakshi Bhargava sharing a special moment with the little ones, spreading love and encouragement at Tsogang Trust.'},
       { id: 3, url: '/src/assets/fixed/mochudi/M2.webp', caption: 'On the ground: The Able Hearts team sorting packages on-site at Mochudi Resource Center, ensuring every child receives the support they need.'},
