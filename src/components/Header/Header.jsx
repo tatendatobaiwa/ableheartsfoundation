@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import ableheartslogo from '/src/assets/icons/ableheartslogo.png';
+import ableheartslogo from '/src/assets/optimized/icons/ableheartslogo.webp';
 import './Header.css';
 
 const Header = () => {

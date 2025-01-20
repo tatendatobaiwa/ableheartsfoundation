@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import mailIcon from "../../assets/icons/mail.png";
-import phoneIcon from "../../assets/icons/call.png";
-import linkedinIcon from "../../assets/icons/linkedin.png";
-import facebookIcon from "../../assets/icons/facebook.png";
-import instagramIcon from "../../assets/icons/instagram.png";
-import ablehearts from "../../assets/icons/whiteablehearts.png";
-import locationlogo from "../../assets/icons/pin.png";
-import whatsapplogo from "../../assets/icons/whatsapp.png";
+import mailIcon from "../../assets/optimized/icons/mail.webp";
+import phoneIcon from "../../assets/optimized/icons/call.webp";
+import linkedinIcon from "../../assets/optimized/icons/linkedin.webp";
+import facebookIcon from "../../assets/optimized/icons/facebook.webp";
+import instagramIcon from "../../assets/optimized/icons/instagram.webp";
+import ablehearts from "../../assets/optimized/icons/whiteablehearts.webp";
+import locationlogo from "../../assets/optimized/icons/pin.webp";
+import whatsapplogo from "../../assets/optimized/icons/whatsapp.webp";
 
 import './Footer.css';
 
