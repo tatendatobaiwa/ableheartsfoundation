@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './TermsOfUse.css';
 
 const blobImages = [
-  '/src/assets/optimized/icons/blob1.webp',
-  '/src/assets/optimized/icons/blob3.webp',
-  '/src/assets/optimized/icons/blob4.webp',
-  '/src/assets/optimized/icons/blob2.webp',
+  '/src/assets/fixed/icons/blob1.webp',
+  '/src/assets/fixed/icons/blob3.webp',
+  '/src/assets/fixed/icons/blob4.webp',
+  '/src/assets/fixed/icons/blob2.webp',
 ];
 
 const TermsOfUse = () => {

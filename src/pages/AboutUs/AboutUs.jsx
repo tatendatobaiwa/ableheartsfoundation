@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './AboutUs.css';
 
 const blobImages = [
-  '/src/assets/optimized/icons/blob1.webp',
-  '/src/assets/optimized/icons/blob3.webp',
-  '/src/assets/optimized/icons/blob4.webp',
-  '/src/assets/optimized/icons/blob2.webp',
+  '/src/assets/fixed/icons/blob1.webp',
+  '/src/assets/fixed/icons/blob3.webp',
+  '/src/assets/fixed/icons/blob4.webp',
+  '/src/assets/fixed/icons/blob2.webp',
 ];
 
 const AboutUs = () => {
@@ -61,7 +61,7 @@ const AboutUs = () => {
   <div className="founder-content">
     <div className="founder-image-container">
       <img
-        src="/src/assets/optimized/thefounderphoto.webp" 
+        src="/src/assets/fixed/thefounderphoto.webp" 
         alt="Founder of Able Hearts Foundation"
         className="founder-image"
       />

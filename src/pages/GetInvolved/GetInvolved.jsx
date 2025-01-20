@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import scribble from '/src/assets/optimized/icons/scribblebackground.webp';
+import scribble from '/src/assets/fixed/icons/scribblebackground.webp';
 import DonationForm from '/src/components/DonationForm.jsx';  
 
 import './GetInvolved.css';
 
 const blobImages = [
-  '/src/assets/optimized/icons/blob1.webp',
-  '/src/assets/optimized/icons/blob3.webp',
-  '/src/assets/optimized/icons/blob4.webp',
-  '/src/assets/optimized/icons/blob2.webp',
+  '/src/assets/fixed/icons/blob1.webp',
+  '/src/assets/fixed/icons/blob3.webp',
+  '/src/assets/fixed/icons/blob4.webp',
+  '/src/assets/fixed/icons/blob2.webp',
 ];
 
 const GetInvolved = () => {
@@ -104,7 +104,7 @@ const GetInvolved = () => {
           </div>
           <div className="right-content">
             <img
-              src="/src/assets/optimized/ubvolunteers.webp"
+              src="/src/assets/fixed/ubvolunteers.webp"
               alt="AbleHearts UB"
               className="placeholder-image"
             />
@@ -128,7 +128,7 @@ const GetInvolved = () => {
           </div>
           <div className="right-content">
             <img
-              src="/src/assets/optimized/biustvolunteers.webp"
+              src="/src/assets/fixed/biustvolunteers.webp"
               alt="AbleHearts BIUST"
               className="placeholder-image"
             />
@@ -157,7 +157,7 @@ const GetInvolved = () => {
           </div>
           <div className="right-content" style={{ padding : '0'}}>
             <img
-              src="/src/assets/optimized/partner.webp"
+              src="/src/assets/fixed/partner.webp"
               alt="Partnerships"
               className="placeholder-image"
               style={{ borderRadius: '0' }}

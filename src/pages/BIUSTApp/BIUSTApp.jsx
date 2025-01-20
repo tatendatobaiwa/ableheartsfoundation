@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import './BIUSTApp.css';
 
 const blobImages = [
-  '/src/assets/optimized/icons/blob1.webp',
-  '/src/assets/optimized/icons/blob3.webp',
-  '/src/assets/optimized/icons/blob4.webp',
-  '/src/assets/optimized/icons/blob2.webp',
+  '/src/assets/fixed/icons/blob1.webp',
+  '/src/assets/fixed/icons/blob3.webp',
+  '/src/assets/fixed/icons/blob4.webp',
+  '/src/assets/fixed/icons/blob2.webp',
 ];
 
 const BIUSTApp = () => {
@@ -82,7 +82,7 @@ const BIUSTApp = () => {
       </div>
       <div className="biust-app-container">
         <div className="biust-app-logo-container">
-          <img src="/src/assets/optimized/icons/biust.webp" alt="biust Logo" className="biust-app-logo" />
+          <img src="/src/assets/fixed/icons/biust.webp" alt="biust Logo" className="biust-app-logo" />
         </div>
 
         <h1 className="biust-app-title">BIUST Application Form</h1>

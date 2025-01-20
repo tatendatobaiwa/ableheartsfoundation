@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import './UBApp.css';
 
 const blobImages = [
-  '/src/assets/optimized/icons/blob1.webp',
-  '/src/assets/optimized/icons/blob3.webp',
-  '/src/assets/optimized/icons/blob4.webp',
-  '/src/assets/optimized/icons/blob2.webp',
+  '/src/assets/fixed/icons/blob1.webp',
+  '/src/assets/fixed/icons/blob3.webp',
+  '/src/assets/fixed/icons/blob4.webp',
+  '/src/assets/fixed/icons/blob2.webp',
 ];
 
 const UBApp = () => {
@@ -81,7 +81,7 @@ const UBApp = () => {
       </div>
       <div className="ub-app-container">
         <div className="ub-app-logo-container">
-          <img src="/src/assets/optimized/icons/ub.webp" alt="ub Logo" className="ub-app-logo" />
+          <img src="/src/assets/fixed/icons/ub.webp" alt="ub Logo" className="ub-app-logo" />
         </div>
 
         <h1 className="ub-app-title">UB Application Form</h1>

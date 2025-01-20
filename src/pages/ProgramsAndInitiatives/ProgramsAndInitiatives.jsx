@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './ProgramsAndInitiatives.css';
 
 const blobImages = [
-  '/src/assets/optimized/icons/blob1.webp',
-  '/src/assets/optimized/icons/blob3.webp',
-  '/src/assets/optimized/icons/blob4.webp',
-  '/src/assets/optimized/icons/blob2.webp',
+  '/src/assets/fixed/icons/blob1.webp',
+  '/src/assets/fixed/icons/blob3.webp',
+  '/src/assets/fixed/icons/blob4.webp',
+  '/src/assets/fixed/icons/blob2.webp',
 ];
 
 const ProgramsAndInitiatives = () => {
@@ -67,7 +67,7 @@ const ProgramsAndInitiatives = () => {
         <div className="program-content">
           <img
             className="program-image"
-            src="/src/assets/optimized/lephoi/garden.webp"
+            src="/src/assets/fixed/lephoi/garden.webp"
             alt="Able Hearts Garden"
           />
           <p className="program-description">
@@ -84,7 +84,7 @@ const ProgramsAndInitiatives = () => {
           </p>
           <img
             className="program-image"
-            src="/src/assets/optimized/dynamictalent/talentshow.webp"
+            src="/src/assets/fixed/dynamictalent/talentshow.webp"
             alt="Dynamic Talent Show"
           />
         </div>
@@ -95,7 +95,7 @@ const ProgramsAndInitiatives = () => {
         <div className="program-content">
           <img
             className="program-image"
-            src="/src/assets/optimized/mochudi/mochud.webp"
+            src="/src/assets/fixed/mochudi/mochud.webp"
             alt="Mochudi Resource Center Visits"
           />
           <p className="program-description">
@@ -112,7 +112,7 @@ const ProgramsAndInitiatives = () => {
           </p>
           <img
             className="program-image"
-            src="/src/assets/optimized/tsogangtrust/tsogangtrust.webp"
+            src="/src/assets/fixed/tsogangtrust/tsogangtrust.webp"
             alt="Tsogang Trust Support"
           />
         </div>
@@ -123,7 +123,7 @@ const ProgramsAndInitiatives = () => {
         <div className="program-content">
           <img
             className="program-image"
-            src="/src/assets/optimized/covid/covid.webp"
+            src="/src/assets/fixed/covid/covid.webp"
             alt="COVID-19 Food Hampers"
           />
           <p className="program-description">
@@ -140,7 +140,7 @@ const ProgramsAndInitiatives = () => {
           </p>
           <img
             className="program-image"
-            src="/src/assets/optimized/lavender/lavender.webp"
+            src="/src/assets/fixed/lavender/lavender.webp"
             alt="Lavender High Tea"
           />
         </div>
@@ -151,7 +151,7 @@ const ProgramsAndInitiatives = () => {
         <div className="program-content">
           <img
             className="program-image"
-            src="/src/assets/optimized/kedia/kedia.webp"
+            src="/src/assets/fixed/kedia/kedia.webp"
             alt="School Donations"
           />
           <p className="program-description">
@@ -159,7 +159,7 @@ const ProgramsAndInitiatives = () => {
           </p>
           <img
             className="program-image"
-            src="/src/assets/optimized/shakawe/shakawedono.webp"
+            src="/src/assets/fixed/shakawe/shakawedono.webp"
             alt="Shakawe JSS Donations"
           />
         </div>

@@ -14,7 +14,7 @@ if (!fs.existsSync(outputDir)) {
 function processImages(directory) {
   fs.readdirSync(directory, { withFileTypes: true }).forEach(file => {
     const inputPath = path.join(directory, file.name);
-    
+
     if (file.isDirectory()) {
       processImages(inputPath);
       return;
@@ -26,7 +26,7 @@ function processImages(directory) {
     // Create relative output path
     const relativePath = path.relative(inputDir, directory);
     const outputPath = path.join(outputDir, relativePath);
-    
+
     // Create output subdirectory if needed
     if (!fs.existsSync(outputPath)) {
       fs.mkdirSync(outputPath, { recursive: true });
@@ -34,8 +34,9 @@ function processImages(directory) {
 
     // Convert to WebP
     const outputFilename = path.join(outputPath, `${path.parse(file.name).name}.webp`);
-    
+
     sharp(inputPath)
+      .rotate() // Correct orientation based on EXIF data
       .webp({ quality: 80 })
       .resize(1200, null, {
         withoutEnlargement: true,
